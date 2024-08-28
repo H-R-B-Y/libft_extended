@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:00:00 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 14:44:55 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			ft_bzero(void *s, int n);
 
 void			*ft_memcpy(void *dest, const void *src, int n);
 
-void			*ft_memmove(void *dest, const void *src, int n);
+void			*ft_memmove(void *dest, const void *src, unsigned int n);
 
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 
