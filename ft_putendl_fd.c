@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 13:21:36 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 13:22:10 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:08:52 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned int	len; 
-	
+	unsigned int	len;
+
 	if (!s)
 		return ;
 	len = ft_strlen(s);

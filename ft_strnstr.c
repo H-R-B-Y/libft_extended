@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:09:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:04:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:04:43 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
-	const char *lil_i;
-	unsigned int offset;
+	const char		*lil_i;
+	unsigned int	offset;
 
-	if (big == 0 || little == 0 || len == 0 || len < ft_strlen(little) || ft_strlen(little) > ft_strlen(big))
+	if (big == 0 || little == 0 || len == 0
+		|| len < ft_strlen(little)
+		|| ft_strlen(little) > ft_strlen(big)
+	)
 		return (0);
 	offset = 0;
 	lil_i = little;

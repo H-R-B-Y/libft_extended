@@ -6,23 +6,23 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:40:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 20:50:00 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:06:39 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_whitespace(char c)
+int	is_whitespace(char c)
 
 {
 	return (c == ' ' || c == '\t'
-			|| c == '\n' || c == '\v'
-			|| c == '\f' || c == '\r'
-			);
+		|| c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r'
+	);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int output;
-	int sign;
+	int	output;
+	int	sign;
 
 	output = 0;
 	sign = 1;

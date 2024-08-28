@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:44:55 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:21:23 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int				ft_isalnum(int argument);
 
 int				ft_isascii(int c);
 
-int 			ft_isprint( int arg );
+int				ft_isprint( int arg );
 
 unsigned int	ft_strlen(const char *str);
 
@@ -39,7 +39,7 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
 
 int				ft_toupper(int c);
 
-int				ft_tolowwer(int c);
+int				ft_tolower(int c);
 
 char			*ft_strchr(char *s, int c);
 
@@ -51,11 +51,12 @@ void			*ft_memchr(const void *s, int c, unsigned int n);
 
 int				ft_memcmp(const void *s1, const void *s2, unsigned int n);
 
-char			*ft_strnstr(const char *big, const char *little, unsigned int len);
+char			*ft_strnstr(const char *big,
+					const char *little, unsigned int len);
 
 int				ft_atoi(const char *nptr);
 
-void			*ft_calloc(unsigned int nmemb, unsigned int size);
+void			*ft_calloc(unsigned int nmemb, unsigned long size);
 
 char			*ft_strdup(char *src);
 

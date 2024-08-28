@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:34:42 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 17:37:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:03:09 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (c >= 33 && c <= 126);
 }

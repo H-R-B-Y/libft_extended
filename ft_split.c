@@ -6,14 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:30:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 11:58:51 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:07:54 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static unsigned int	word_count (const char *str, char sep)
+static unsigned int	word_count(const char *str, char sep)
 {
 	unsigned int	count;
 	int				last_sep;

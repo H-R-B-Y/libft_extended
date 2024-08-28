@@ -6,15 +6,15 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:03:19 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 20:08:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:06:13 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 {
-	const unsigned char *s1_i;
-	const unsigned char *s2_i;
-	unsigned int index;
+	const unsigned char	*s1_i;
+	const unsigned char	*s2_i;
+	unsigned int		index;
 
 	s1_i = s1;
 	s2_i = s2;

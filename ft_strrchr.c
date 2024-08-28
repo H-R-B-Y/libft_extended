@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:28:16 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 19:36:26 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:04:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(char *s, int c)
 {
-	char *start;
+	char	*start;
 
 	if (*s == '\0')
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:59:41 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 12:15:57 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:08:04 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static unsigned int	digits_needed(long n)
 	return (i + !(n));
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	digits;
 	char			*output;

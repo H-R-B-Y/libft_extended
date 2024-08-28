@@ -6,15 +6,16 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:09:58 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 18:16:56 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:05:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, int n)
 {
-	int	i;
-	char *t = s;
+	int		i;
+	char	*t;
 
+	t = s;
 	i = 0;
 	while (i < n)
 		t[i++] = '\0';

@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:29:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 17:34:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:03:05 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

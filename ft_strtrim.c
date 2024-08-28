@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:06:22 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:00:19 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:05:18 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	char_in_str(const char c, const char *str)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char			*start; 
+	char			*start;
 	char			*output;
 	unsigned int	index;
 	unsigned int	rev_i;
@@ -41,5 +41,5 @@ char *ft_strtrim(char const *s1, char const *set)
 	output = malloc(rev_i + 1);
 	output[rev_i] = '\0';
 	ft_strlcat(output, start, rev_i + 1);
-	return output;
+	return (output);
 }

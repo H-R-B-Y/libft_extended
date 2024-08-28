@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 13:19:22 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:12:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:08:33 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	len; 
-	
+	unsigned int	len;
+
 	if (!s)
 		return ;
 	len = ft_strlen(s);
 	write(fd, s, len);
 	return ;
 }
-
