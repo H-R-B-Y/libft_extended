@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:33:35 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 13:56:34 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/28 13:22:37 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/28 14:05:25 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
-unsigned int ft_strlcat(char *dest, const char *src, unsigned int size)
+
+void ft_putnbr_fd(int n, int fd)
 {
-	char			*dest_i;
-	unsigned int	dest_len;
-	unsigned int	src_len;
+	char t; 
 
-	src_len = ft_strlen(src);
-	dest_len = ft_strlen(dest);
-	dest_i = &(dest[dest_len]);
-	if (size <= dest_len)
-		return (src_len + size);
-	while (*src && ((dest_i - dest) - dest_len) < (size - dest_len) - 1)
-		*dest_i++ = *src++;
-	*dest_i = '\0';
-	return (src_len + dest_len);
+	if (n / 10 > 0)
+		ft_putnbr_fd(n / 10, fd);
+	t = (n % 10) + '0';
+	write(fd, &t, 1);
+	return ;
 }
-

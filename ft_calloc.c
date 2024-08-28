@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:29:12 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 13:56:26 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/27 20:58:30 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/27 21:06:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-unsigned int ft_strlcpy(char *dest, const char *src, unsigned int size)
+void	*ft_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int	src_len;
-	unsigned int	index;
+	unsigned char *array;
+	unsigned int i;
 
-	src_len = ft_strlen(src);
-	if (!dest || !src || !size)
-		return (src_len);
-	
-	index = 0;
-	while (src[index] != '\0' && index < size)
+	if (nmemb == 0 || size == 0)
+		return (0);
+	array = malloc(sizeof(char) * size * nmemb);
+	if (array == 0)
+		return (0);
+	i = 0;
+	while (i < nmemb * size)
 	{
-		dest[index] = src[index];
-		index++;
+		array[i] = 0;
+		i++;
 	}
-	dest[index - 1 * !(index < size)] = 0;
-	return (src_len);
+	return array;
 }

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:09:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 20:37:49 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 14:04:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 		lil_i++;
 	}
 	if (*lil_i == '\0')
-		return (big);
+		return ((char *)big);
 	else
-		return (ft_strnstr(big+1, little, len-1));
+		return (ft_strnstr(big + 1, little, len - 1));
 }
