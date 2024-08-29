@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 19:44:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 18:30:52 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/29 12:08:01 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/29 16:03:32 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
-{
-	unsigned int	index;
+#include <stdlib.h>
+#include "libft.h"
 
-	if (s == 0)
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*output;
+
+	output = malloc(sizeof(t_list));
+	if (!output)
 		return (0);
-	index = 0;
-	while (index < n)
-	{
-		if (((unsigned char *)s)[index] == (unsigned char)c)
-			return (&(((unsigned char *)s)[index]));
-		index++;
-	}
-	return (0);
+	output->content = content;
+	output->next = 0;
+	return (output);
 }

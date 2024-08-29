@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:45:47 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 18:46:34 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/29 13:22:02 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@ unsigned int	ft_strlen(char *c)
 {
 	unsigned int	i;
 
+	if (!c)
+		return (0);
 	i = 0;
-	while (c[i])
+	while (c[i] != 0)
 		i++;
 	return (i);
 }

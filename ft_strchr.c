@@ -6,17 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:21:07 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 19:37:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/29 18:45:48 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (*s == '\0')
+	if (!s)
 		return (0);
-	while (*s && *s != c)
+	while (*s && (unsigned char)*s != (unsigned char)c)
 		s++;
-	if (*s == c)
-		return (s);
+	if ((unsigned char)*s == (unsigned char)c)
+		return ((char *)s);
 	return (0);
 }

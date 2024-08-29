@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 19:44:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 18:30:52 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/29 12:27:21 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/29 14:16:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
-{
-	unsigned int	index;
+#include "libft.h"
+#include <stdlib.h>
 
-	if (s == 0)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+{
+	t_list	*output;
+	t_list	*index;
+	t_list	*tmp;
+
+	output = ft_lstnew(f(lst->content));
+	if (!output)
 		return (0);
-	index = 0;
-	while (index < n)
+	index = lst;
+	while(index->next)
 	{
-		if (((unsigned char *)s)[index] == (unsigned char)c)
-			return (&(((unsigned char *)s)[index]));
-		index++;
+		index = index->next;
+		tmp =  ft_lstnew(f(index->content));
+		if (!tmp)
+		{
+			ft_lstclear(&output, del);
+			return (0);
+		}
+		ft_lstadd_back(&output,tmp);
 	}
-	return (0);
+	return (output);
 }

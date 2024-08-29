@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 21:08:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 19:16:26 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/29 12:18:08 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/29 13:10:04 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		len;
-	int		i;
-	char	*ret;
-
-	if (!src)
+	t_list	*index;
+	
+	index = lst;
+	if (!lst)
 		return (0);
-	len = ft_strlen(src);
-	ret = malloc((unsigned long)len + 1);
-	if (ret == 0)
-		return (0);
-	i = 0;
-	ret[len] = '\0';
-	while (src[i])
-	{
-		ret[i] = src[i];
-		i++;
-	}
-	return (ret);
+	while (index->next)
+		index = index->next;
+	return (index);
 }
+
+// #include "PRINTMEMORY.c"
+// int main()
+// {
+// 	t_list *start;
+// 	char *t = "HELLO WORLD";
+// 	char *t1 = "NEW TEXT";
+// 	char *t2 = "BORN2CODE";
+
+// 	start = ft_lstnew(t);
+// 	start->next = ft_lstnew(t1);
+// 	start->next->next = ft_lstnew(t2);
+// 	ft_print_memory(ft_lstlast(start)->content, 128);
+// }

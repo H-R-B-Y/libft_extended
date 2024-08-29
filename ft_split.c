@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_old.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 11:30:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 15:07:54 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/08/28 21:14:42 by hbreeze           #+#    #+#             */
+/*   Updated: 2024/08/29 19:01:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static unsigned int	word_count(const char *str, char sep)
 {
@@ -22,6 +22,8 @@ static unsigned int	word_count(const char *str, char sep)
 	count = 0;
 	last_sep = -1;
 	index = 0;
+	if (!str)
+		return (0);
 	while (str[index] != '\0')
 	{
 		if (str[index] == sep)
@@ -37,31 +39,47 @@ static unsigned int	word_count(const char *str, char sep)
 	return (count);
 }
 
+static unsigned int	word_len(const char *str, char sep)
+{
+	char	*index;
+
+	index = (char *)str;
+	while (*index != '\0' && *index != sep)
+		index++;
+	return (index - str);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	word;
-	unsigned int	count;
+	unsigned int	word_index;
 	char			**output;
-	int				last_sep;
-	int				index;
+	int				word_started;
 
-	last_sep = -1;
-	count = word_count(s, c);
-	output = malloc(sizeof(char *) * (count + 1));
-	output[count] = 0;
-	index = 0;
-	word = 0;
-	while (word < count && output)
+	word_index = 0;
+	word_started = 1;
+	if (!s)
+		return (0);
+	output = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!output)
+		return (0);
+	output[word_count(s, c)] = 0;
+	while (*s)
 	{
-		if (s[index] != c && s[index] != '\0' && ++index)
-			continue ;
-		if ((index - last_sep) > 1)
-		{
-			output[word] = malloc(sizeof(char) * (index - (last_sep + 1) + 1));
-			ft_strlcat(output[word], s + last_sep + 1, (index - last_sep));
-			word++;
-		}
-		last_sep = index++;
+		if (*s == c)
+			word_started = 1;
+		else if (*s != c && word_started && word_started--)
+			output[word_index++] = ft_substr(s, 0, word_len(s, c));
+		s++;
 	}
 	return (output);
 }
+
+// #include <stdio.h>
+// #include <unistd.h>
+// #include "PRINTMEMORY.c"
+// int main ()
+// {
+// 	char *t = "";
+// 	char **c =  ft_split(t, ' ');
+// 	ft_print_memory(&(c[0]), 128);
+// }

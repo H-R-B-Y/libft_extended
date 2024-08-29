@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:06:22 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 15:05:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/29 17:33:17 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,24 @@ static int	char_in_str(const char c, const char *str)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	char			*start;
-	char			*output;
-	unsigned int	index;
-	unsigned int	rev_i;
+	unsigned int	size;
+	char			*end;
 
-	index = 0;
-	while (*(s1 + index) && char_in_str(*(s1 + index), set))
-		index++;
-	if (*(s1 + index) == '\0')
+	size = 0;
+	end = (char *)s1;
+	if (!s1)
 		return (0);
-	start = (char *)s1 + index;
-	rev_i = ft_strlen(start) - 1;
-	while (char_in_str(*(start + rev_i), set) && rev_i > 0)
-		rev_i--;
-	rev_i += 1;
-	output = malloc(rev_i + 1);
-	output[rev_i] = '\0';
-	ft_strlcat(output, start, rev_i + 1);
-	return (output);
+	if (!set)
+		return (ft_strdup((char *)s1));
+	while (*s1 && char_in_str(*s1, set))
+		s1++;
+	while (*end)
+		end++;
+	while (*(--end))
+		if (!char_in_str(*end, set))
+			break ;
+	size = (end - s1) + 1;
+	return (ft_substr(s1, 0, size));
 }

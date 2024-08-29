@@ -6,23 +6,20 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:28:16 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 15:04:50 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/29 18:46:13 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*start;
 
-	if (*s == '\0')
-		return (0);
-	start = s;
+	start = (char *)s;
 	while (*s)
 		s++;
-	s--;
-	while (start <= s && *s != c)
+	while (start < s && (unsigned char)*s != (unsigned char)c)
 		s--;
-	if (start > s)
-		return (0);
-	return (s);
+	if ((unsigned char)*s == (unsigned char)c && start <= s)
+		return ((char *)s);
+	return (0);
 }

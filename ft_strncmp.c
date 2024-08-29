@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:38:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 15:03:59 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/28 18:59:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 		s2_i++;
 		index++;
 	}
-	return (*s1_i - *s2_i);
+	return ((unsigned char)*s1_i - (unsigned char)*s2_i);
 }
