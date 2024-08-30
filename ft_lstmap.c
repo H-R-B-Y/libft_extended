@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:27:21 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 13:01:04 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 20:44:12 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*index;
 	t_list	*tmp;
 
+	if (!lst || !f || !del)
+		return (0);
 	output = ft_lstnew(f(lst->content));
 	if (!output)
 		return (0);
