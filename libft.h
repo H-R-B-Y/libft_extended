@@ -6,12 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 19:34:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:15:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+#include <stdlib.h>
 
 // Mandatory
 
