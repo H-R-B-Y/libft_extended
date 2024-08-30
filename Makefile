@@ -8,15 +8,15 @@ BOBJ		= $(BSRC:.c=.o)
 NAME		= libft.a
 HEADER		= libft.h
 
+all: $(NAME) bonus
+
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar $(ARFLAGS) $(NAME) $(OBJ)
 
-bonus: $(NAME)
+bonus: $(BSRC)
 	$(CC) $(CFLAGS) -c $(BSRC)
 	ar $(ARFLAGS) $(NAME) $(BOBJ)
-
-all: $(NAME) bonus
 
 clean:
 	rm -f $(OBJ) $(BOBJ)

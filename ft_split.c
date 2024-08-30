@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_old.c                                     :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 21:14:42 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 19:01:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:05:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static unsigned int	word_count(const char *str, char sep)
+static size_t	word_count(const char *str, char sep)
 {
-	unsigned int	count;
+	size_t			count;
 	int				last_sep;
 	int				index;
 
@@ -39,7 +39,7 @@ static unsigned int	word_count(const char *str, char sep)
 	return (count);
 }
 
-static unsigned int	word_len(const char *str, char sep)
+static size_t	word_len(const char *str, char sep)
 {
 	char	*index;
 
@@ -51,7 +51,7 @@ static unsigned int	word_len(const char *str, char sep)
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	word_index;
+	size_t			word_index;
 	char			**output;
 	int				word_started;
 
@@ -73,13 +73,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (output);
 }
-
-// #include <stdio.h>
-// #include <unistd.h>
-// #include "PRINTMEMORY.c"
-// int main ()
-// {
-// 	char *t = "";
-// 	char **c =  ft_split(t, ' ');
-// 	ft_print_memory(&(c[0]), 128);
-// }

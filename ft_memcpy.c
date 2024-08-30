@@ -6,14 +6,16 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:18:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 18:24:21 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:32:06 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*d;
-	int		i;
+	char		*d;
+	size_t		i;
 
 	i = 0;
 	d = dest;

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:06:22 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 17:33:17 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:04:39 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	char_in_str(const char c, const char *str)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	unsigned int	size;
+	size_t			size;
 	char			*end;
 
 	size = 0;

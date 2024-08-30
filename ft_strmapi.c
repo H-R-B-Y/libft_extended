@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:17:48 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 14:01:50 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:07:51 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	index;
-	unsigned int	length;
+	size_t			index;
+	size_t			length;
 	char			*output;
 
 	length = ft_strlen(s);

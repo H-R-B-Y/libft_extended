@@ -6,14 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:58:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 12:10:41 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:23:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(unsigned int nmemb, unsigned int size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;
 

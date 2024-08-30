@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:59:41 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 18:31:24 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:07:29 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static unsigned int	digits_needed(long long n)
+static size_t	digits_needed(long long n)
 {
 	long	digits;
 	int		i;
@@ -29,7 +29,7 @@ static unsigned int	digits_needed(long long n)
 
 char	*ft_itoa(int n)
 {
-	unsigned int	digits;
+	size_t			digits;
 	char			*output;
 	int				is_signed;
 	long			num;
@@ -54,10 +54,3 @@ char	*ft_itoa(int n)
 	output[digits] = (num % 10) + '0';
 	return (output);
 }
-
-// #include "PRINTMEMORY.c"
-// int main ()
-// {
-// 	char *t = ft_itoa(-1);
-// 	ft_print_memory(t, 128);
-// }

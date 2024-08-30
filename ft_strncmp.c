@@ -6,15 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:38:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/28 18:59:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:59:14 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	const char		*s1_i;
 	const char		*s2_i;
-	unsigned int	index;
+	size_t			index;
 
 	s1_i = s1;
 	s2_i = s2;

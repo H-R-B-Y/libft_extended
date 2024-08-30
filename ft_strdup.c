@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 21:08:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 19:16:26 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:04:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_strdup(const char *src)
 {
-	int		len;
-	int		i;
-	char	*ret;
+	size_t		len;
+	size_t		i;
+	char		*ret;
 
 	if (!src)
 		return (0);

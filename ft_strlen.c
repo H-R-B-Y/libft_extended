@@ -6,18 +6,20 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:45:47 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 13:22:02 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:40:42 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *c)
-{
-	unsigned int	i;
+#include "libft.h"
 
-	if (!c)
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	if (!str)
 		return (0);
 	i = 0;
-	while (c[i] != 0)
+	while (str[i] != 0)
 		i++;
 	return (i);
 }

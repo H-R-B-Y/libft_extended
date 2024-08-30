@@ -6,16 +6,16 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:09:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 18:10:05 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:03:48 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, unsigned int len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	const char		*lil_i;
-	unsigned int	offset;
+	size_t			offset;
 
 	if (big == 0 || little == 0
 		|| len < ft_strlen(little)

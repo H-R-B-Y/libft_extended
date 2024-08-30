@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:19:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 15:47:49 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:59:55 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*index;
-	
+
 	if (!new || !lst)
 		return ;
 	if (!*lst)

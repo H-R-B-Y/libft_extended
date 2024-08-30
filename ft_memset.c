@@ -6,13 +6,15 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:00:58 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/27 18:08:45 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:05:37 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, int n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	str = s;
