@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:09:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 13:03:48 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:57:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	const char		*lil_i;
 	size_t			offset;
 
-	if (big == 0 || little == 0
+	if (!big
+		|| !little
 		|| len < ft_strlen(little)
 		|| ft_strlen(little) > ft_strlen(big)
 	)
@@ -29,7 +30,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		offset++;
 		lil_i++;
 	}
-	if (*lil_i == '\0')
+	if (!*lil_i)
 		return ((char *)big);
 	else
 		return (ft_strnstr(big + 1, little, len - 1));

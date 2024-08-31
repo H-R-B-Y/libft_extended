@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:14:19 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/29 12:41:08 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:21:42 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
+	if (*lst)
+		new->next = *lst;
 	*lst = new;
 }

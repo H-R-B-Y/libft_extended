@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:19:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 12:59:55 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:20:42 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	index = ft_lstlast(*lst);
+	if (!index)
+		return ;
 	index->next = new;
 }

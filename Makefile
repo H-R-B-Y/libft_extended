@@ -19,11 +19,15 @@ $(NAME): $(OBJ)
 bonus: $(BOBJ)
 	$(AR) $(NAME) $(BOBJ)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
+
 clean:
 	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
-	rm -f libft.a
+	rm -f libft.a libft.so
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:44:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 20:38:56 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:41:05 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	index;
 
-	if (s == 0)
+	if (!s)
 		return (0);
 	index = 0;
 	while (index < n)

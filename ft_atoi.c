@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:40:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 13:07:04 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:18:02 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_whitespace(char c)
+static int	is_whitespace(char c)
 
 {
 	return (c == ' ' || c == '\t'

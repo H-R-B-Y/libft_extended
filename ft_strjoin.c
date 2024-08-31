@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:50:51 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 20:40:04 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 12:48:33 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char			*output;
 	size_t			size;
-	size_t			index;
 
 	if (s1 == 0 || s2 == 0)
 		return (0);
@@ -26,17 +25,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (!output)
 		return (0);
 	output[size] = '\0';
-	index = 0;
-	while (index < ft_strlen(s1))
-	{
-		output[index] = s1[index];
-		index++;
-	}
-	index = 0;
-	while (index < ft_strlen(s2))
-	{
-		output[ft_strlen(s1) + index] = s2[index];
-		index++;
-	}
+	ft_memmove(output, s1, ft_strlen(s1));
+	ft_memmove(output + ft_strlen(s1), s2, ft_strlen(s2));
 	return (output);
 }
