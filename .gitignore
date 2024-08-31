@@ -5,3 +5,4 @@ PRINTMEMORY.c
 a.out
 *.o
 *_old*
+*.a
