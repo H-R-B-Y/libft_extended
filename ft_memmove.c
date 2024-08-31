@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:24:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/30 20:38:41 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 15:53:42 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*temp_src;
 
 	if (!src)
+		return (0);
+	if (!dest)
 		return (0);
 	if (src > dest)
 		return (ft_memcpy(dest, src, n));

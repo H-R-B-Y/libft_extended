@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:18:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/31 15:18:23 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/08/31 15:53:26 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t			i;
 
 	if (!dest && !src)
+		return (0);
+	if (!dest)
 		return (0);
 	i = 0;
 	d = dest;
