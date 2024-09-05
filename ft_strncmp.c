@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:38:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/31 13:11:57 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/09/05 12:03:47 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	index = 0;
 	if (!(n))
 		return (0);
-	while (index + 1 < n && *s1_i && *s2_i && (*s1_i == *s2_i))
+	while (index + 1 < n
+		&& *s1_i
+		&& *s2_i
+		&& (*s1_i == *s2_i)
+	)
 	{
 		s1_i++;
 		s2_i++;

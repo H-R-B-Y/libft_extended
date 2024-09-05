@@ -22,10 +22,6 @@ $(NAME):	$(OBJ)
 bonus:		$(BOBJ)
 			$(AR) $(NAME) $(BOBJ)
 
-so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC)
-			gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
-
 clean:
 			rm -f $(OBJ) $(BOBJ)
 
@@ -35,3 +31,8 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		re all clean fclean bonus
+
+# For portable object files
+#so:
+#			$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC)
+#			gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)

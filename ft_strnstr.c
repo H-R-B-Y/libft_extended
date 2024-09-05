@@ -6,12 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:09:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/08/31 12:57:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/09/05 11:57:40 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Big / Little naming convention is horrible:
+// Reminder: little is the substring being searched for in big
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	const char		*lil_i;
