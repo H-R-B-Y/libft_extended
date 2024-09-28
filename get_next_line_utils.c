@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:47:00 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/09/28 19:01:36 by hbreeze          ###   ########.fr       */
+/*   Updated: 2024/09/28 19:08:09 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin( char *s1, char *s2, int flag)
+char	*fancy_str_join( char *s1, char *s2, int flag)
 {
 	char	*output;
 	size_t	size1;
