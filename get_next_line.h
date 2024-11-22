@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -29,16 +29,18 @@
 
 # endif
 
-typedef struct s_master
+typedef struct s_gnlbuffer
 {
 	char	*exit;
 	char	*swap;
 	int		eof;
 	char	*buff;
-}	t_master;
+}	t_gnlbuffer;
 
 char	*get_next_line(int fd);
 
 char	*fancy_str_join( char *s1, char *s2, int flag);
+
+void	*zeroit(void *ptr, size_t size);
 
 #endif
