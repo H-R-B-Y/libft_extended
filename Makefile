@@ -1,3 +1,11 @@
+
+# ███████ ████████  █████  ████████ ██  ██████ 
+# ██         ██    ██   ██    ██    ██ ██      
+# ███████    ██    ███████    ██    ██ ██      
+#      ██    ██    ██   ██    ██    ██ ██      
+# ███████    ██    ██   ██    ██    ██  ██████ 
+
+
 NAME		= libft.a
 HEADER		= libft.h
 
@@ -5,6 +13,7 @@ CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 AR			= ar rc
 
+# Mandatory functions
 SRC			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
 			ft_memcmp.c ft_memcpy.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c \
@@ -12,33 +21,44 @@ SRC			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
 			ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 			ft_substr.c ft_tolower.c ft_toupper.c ft_memmove.c
-
-# get next line
-GNLSRC		= get_next_line.c \
-			get_next_line_utils.c
-GNLOBJ		= $(GNLSRC:.c=.o)
-
-# printf
-PRNTSRC		+= bitflags.c \
-			conv_factory.c \
-			conversion_functions.c \
-			prefix_padding.c \
-			ft_printf.c \
-			general_functions.c \
-			escape_parsing.c \
-			precision.c \
-			generators.c
-PRNTOBJ		= $(PRNTSRC:.c=.o)
-
-# custom stuff
+# Extra functions
 SRC			+= ft_iswhitespace.c
 
-OBJ			= $(SRC:.c=.o)
-
+# Bonus functions
 BSRC		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c ft_lstget_bonus.c ft_lstiter_param_bonus.c
+			ft_lstmap_bonus.c ft_lstget_bonus.c
+# Extra bonus functions
+BSRC		+= ft_lstiter_param_bonus.c
+
+# get next line
+GNLDIR		= get_next_line
+GNLSRC		= $(GNLDIR)/get_next_line.c \
+			$(GNLDIR)/get_next_line_utils.c
+
+# printf
+PRNTDIR		= ft_printf
+PRNTSRC		+= $(PRNTDIR)/bitflags.c \
+			$(PRNTDIR)/conv_factory.c \
+			$(PRNTDIR)/conversion_functions.c \
+			$(PRNTDIR)/prefix_padding.c \
+			$(PRNTDIR)/ft_printf.c \
+			$(PRNTDIR)/general_functions.c \
+			$(PRNTDIR)/escape_parsing.c \
+			$(PRNTDIR)/precision.c \
+			$(PRNTDIR)/generators.c
+
+OBJ			= $(SRC:.c=.o)
 BOBJ		= $(BSRC:.c=.o)
+GNLOBJ		= $(GNLSRC:.c=.o)
+PRNTOBJ		= $(PRNTSRC:.c=.o)
+
+# ██████  ███████  ██████ ██ ██████  ███████ 
+# ██   ██ ██      ██      ██ ██   ██ ██      
+# ██████  █████   ██      ██ ██████  █████   
+# ██   ██ ██      ██      ██ ██      ██      
+# ██   ██ ███████  ██████ ██ ██      ███████ 
+
 
 all:		$(NAME) bonus print get_next_line
 
@@ -46,7 +66,7 @@ $(NAME):	$(OBJ)
 			$(AR) $(NAME) $(OBJ)
 
 .c.o:
-			$(CC) $(CFLAGS) -c $<
+		$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 bonus:		$(BOBJ)
 			$(AR) $(NAME) $(BOBJ)
@@ -71,3 +91,27 @@ re:			fclean all
 so:
 			$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC) $(GNLSRC) $(PRNTSRC)
 			gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ) $(GNLOBJ) $(PRNTOBJ)
+
+# ███    ██  ██████  ████████ ███████ 
+# ████   ██ ██    ██    ██    ██      
+# ██ ██  ██ ██    ██    ██    █████   
+# ██  ██ ██ ██    ██    ██    ██      
+# ██   ████  ██████     ██    ███████ 
+
+# To include this as a library in your project,
+# copy libft to lib folder copy includes to includes folder
+# and add the following to your Makefile:
+
+# static vars:
+# LIBFT_DIR		:= $(abspath $(LIB_DIR)/libft)
+# LIBFT			:= $(LIBFT_DIR)/libft.a
+
+# Recipe:
+# $(LIBFT):
+# 		$(MAKE) --directory $(LIBFT_DIR) all CFLAGS="$(CFLAGS)"
+
+# for clean:
+# $(MAKE) --directory $(LIBFT_DIR) clean
+
+# for fclean:
+# $(MAKE) --directory $(LIBFT_DIR) fclean
