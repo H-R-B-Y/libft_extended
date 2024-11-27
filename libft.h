@@ -188,11 +188,21 @@ char			*ft_strtrim(const char*s1, const char *set);
  * @brief Split a string by a character
  * @param str String to split
  * @param c Character to split by
- * @return A malloc'd array of strings containing the split string
+ * @return A malloc'd array of split substrings.
  * @warning String must be null terminated
  * @warning All substrings must be free'd
  */
 char			**ft_split(const char *str, char c);
+
+/**
+ * @brief Split a string by a function
+ * @param str String to split
+ * @param delim function used to determine if a char is a deliminator
+ * @return A malloc'd array of split substrings.
+ * @warning String must be null terminated
+ * @warning All substrings must be free'd
+ */
+char			**ft_splitfn(char const *s,  int (*delim)(int c));
 
 /**
  * @brief Split but uses a function and doesn't split when quoted.

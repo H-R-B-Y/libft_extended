@@ -24,7 +24,7 @@ static size_t	qtwordcnt(const char *str, int (*delim)(int c))
 	indexes[0] = -1;
 	ft_memset(&indexes[1], '\0', sizeof(int) * 2);
 	count = 0;
-	if (!str)
+	if (!str || !delim)
 		return (0);
 	while (str[indexes[1]] != '\0')
 	{
@@ -57,7 +57,7 @@ static size_t	qtwordlen(const char *str, int (*delim)(int c), int quoted)
 	return (index - str);
 }
 
-char **ft_splitquoted(const char *str, int (*delim)(int c))
+char	**ft_splitquoted(const char *str, int (*delim)(int c))
 {
 	size_t			index;
 	char			**output;
@@ -67,7 +67,7 @@ char **ft_splitquoted(const char *str, int (*delim)(int c))
 	index = 0;
 	isword = 1;
 	quote = 0;
-	if (!str)
+	if (!str || !delim)
 		return (0);
 	output = malloc((qtwordcnt(str, delim) + 1) * sizeof(char *));
 	if (output)
@@ -84,12 +84,3 @@ char **ft_splitquoted(const char *str, int (*delim)(int c))
 	}
 	return (output);
 }
-
-// int main ()
-// {
-// 	char *str = " Thisis a \"string\" that has \"quotes \"";
-// 	char **splt;
-
-// 	splt = ft_splitquoted(str, ft_iswhitespace);
-// 	return (0);
-// }
