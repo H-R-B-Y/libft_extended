@@ -194,6 +194,16 @@ char			*ft_strtrim(const char*s1, const char *set);
  */
 char			**ft_split(const char *str, char c);
 
+/**
+ * @brief Split but uses a function and doesn't split when quoted.
+ * @param str String to split.
+ * @param delim Function to use to denote deliminator.
+ * @return A malloc'd array of split substrings.
+ * @warning String must be null terminated.
+ * @warning All substring must be free'd 
+ */
+char			**ft_splitquoted(const char *str, int (*delim)(int c));
+
 // Memory functions
 
 /**
