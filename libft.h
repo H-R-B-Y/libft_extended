@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/10/01 19:13:06 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/01/29 12:02:51 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 // ██ ████ ██ ███████ ██ ██  ██ ██   ██ ███████    ██    █████   
 // ██  ██  ██ ██   ██ ██  ██ ██ ██   ██ ██   ██    ██    ██      
 // ██      ██ ██   ██ ██   ████ ██████  ██   ██    ██    ███████ 
-
-
 
 /**
  * @brief Check if a character is a letter
@@ -69,7 +67,7 @@ int				ft_iswhitespace(int c);
  * @brief Convert a character to uppercase
  * @param c Character to convert
  * @return c if c is not a lowercase letter OR the uppercase variant of c
- */ 
+ */
 int				ft_toupper(int c);
 
 /**
@@ -179,7 +177,8 @@ char			*ft_strjoin(const char *s1, const char *s2);
  * @brief Trim a set of characters from the start and end of a string
  * @param s1 String to trim
  * @param set Set of characters to trim
- * @return A malloc'd string containing s1 with set trimmed from the start and end
+ * @return A malloc'd string containing s1 with set
+ * 	trimmed from the start and end
  * @warning Strings must be null terminated
  */
 char			*ft_strtrim(const char*s1, const char *set);
@@ -202,7 +201,7 @@ char			**ft_split(const char *str, char c);
  * @warning String must be null terminated
  * @warning All substrings must be free'd
  */
-char			**ft_splitfn(char const *s,  int (*delim)(int c));
+char			**ft_splitfn(char const *s, int (*delim)(int c));
 
 /**
  * @brief Split but uses a function and doesn't split when quoted.

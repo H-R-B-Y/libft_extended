@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:33:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2024/09/28 19:03:39 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/01/29 12:03:11 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static int	read_file(int fd, t_gnlbuffer *m)
 char	*get_next_line(int fd)
 {
 	static t_gnlbuffer	m[MAX_FD];
-	int				bytes;
-	char			*tmp;
+	int					bytes;
+	char				*tmp;
 
 	if (fd < 0 || fd >= MAX_FD)
 		return ((char *)0ul);

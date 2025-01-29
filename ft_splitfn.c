@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_splitfn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbreeze <hbreeze@student.42.fr>            #+#  +:+       +#+        */
+/*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-11-27 18:11:34 by hbreeze           #+#    #+#             */
-/*   Updated: 2024-11-27 18:11:34 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/11/27 18:11:34 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/01/29 12:00:48 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static size_t	wordcntfn(const char *str, int (*delim)(int c))
 	return (count);
 }
 
-static size_t	wordlenfn(const char *str,  int (*delim)(int c))
+static size_t	wordlenfn(const char *str, int (*delim)(int c))
 {
 	char	*index;
 
@@ -51,7 +51,7 @@ static size_t	wordlenfn(const char *str,  int (*delim)(int c))
 	return (index - str);
 }
 
-char	**ft_splitfn(char const *s,  int (*delim)(int c))
+char	**ft_splitfn(char const *s, int (*delim)(int c))
 {
 	size_t			word_index;
 	char			**output;
