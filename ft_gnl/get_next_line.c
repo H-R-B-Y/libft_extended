@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:33:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/01/29 12:03:11 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/02/13 16:38:54 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include/get_next_line.h"
 
 static int	read_file(int fd, t_gnlbuffer *m)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitquotec                                     :+:      :+:    :+:   */
+/*   ft_splitquoted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbreeze <hbreeze@student.42.fr>            #+#  +:+       +#+        */
+/*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-11-27 17:26:18 by hbreeze           #+#    #+#             */
-/*   Updated: 2024-11-27 17:26:18 by hbreeze          ###   ########.fr       */
+/*   Created: 2024/11/27 17:26:18 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/02/13 16:37:06 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./include/libft.h"
 #include <stdlib.h>
 
 	// int				index of last sep;
