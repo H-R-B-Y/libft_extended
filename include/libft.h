@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/01/29 12:03:42 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/02/13 16:42:22 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -446,5 +446,12 @@ t_list			*ft_lstget(t_list *lst, size_t index);
 void			ft_lstiter_param(t_list *lst,
 					void (*f)(t_list *, void *),
 					void *param);
+
+// Experimental
+/**
+ * @brief simple implementation of atof
+ * @param str str to convert to a float
+ */
+float	my_atof(const char *str);
 
 #endif
