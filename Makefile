@@ -60,37 +60,47 @@ PRNTOBJ		= $(PRNTSRC:.c=.o)
 # ██   ██ ███████  ██████ ██ ██      ███████ 
 
 
-all:		$(NAME) bonus print get_next_line
+all:		pre $(NAME) bonus print get_next_line post
 
 $(NAME):	$(OBJ)
-			$(AR) $(NAME) $(OBJ)
+			@$(AR) $(NAME) $(OBJ)
 
 .c.o:
-		$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+			@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 bonus:		$(BOBJ)
-			$(AR) $(NAME) $(BOBJ)
+			@$(AR) $(NAME) $(BOBJ)
 
 print:		$(OBj) $(PRNTOBJ)
-			$(AR) $(NAME) $(OBJ) $(PRNTOBJ)
+			@$(AR) $(NAME) $(OBJ) $(PRNTOBJ)
 
 get_next_line:	$(OBJ) $(GNLOBJ)
-			$(AR) $(NAME) $(GNLOBJ)
+			@$(AR) $(NAME) $(GNLOBJ)
 
 clean:
-			rm -f $(OBJ) $(BOBJ) $(PRNTOBJ) $(GNLOBJ)
+			@rm -f $(OBJ) $(BOBJ) $(PRNTOBJ) $(GNLOBJ)
 
-fclean:		clean
-			rm -f libft.a libft.so
+fclean:		pre clean post
+			@rm -f libft.a libft.so
 
 re:			fclean all
 
 .PHONY:		re all clean fclean bonus
 
+pre:
+	@echo
+	@echo "   /)  /)",
+	@echo " ପ(˶•-•˶)ଓ ♡",
+	@echo -n "  /づ  づ ˚₊‧꒰$(NAME) :: $(MAKECMDGOALS) :: Wait  ꒱ ‧₊˚⭒"
+
+post:
+	@echo "\b\b\b\b\b\b\b\b\b\b\b\b\bDone  ꒱ ‧₊˚⭒"
+	@echo 
+
 # For portable object files
 so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC) $(GNLSRC) $(PRNTSRC)
-			gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ) $(GNLOBJ) $(PRNTOBJ)
+			@$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC) $(GNLSRC) $(PRNTSRC)
+			@gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ) $(GNLOBJ) $(PRNTOBJ)
 
 # ███    ██  ██████  ████████ ███████ 
 # ████   ██ ██    ██    ██    ██      
