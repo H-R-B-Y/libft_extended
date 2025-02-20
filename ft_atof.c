@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_atof.c                                          :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:35:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/13 16:40:46 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/02/20 14:02:05 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-float	my_atof(const char *str)
+float	ft_atof(const char *str)
 {
 	float	output;
 	char	*tmp;
