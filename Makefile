@@ -1,11 +1,3 @@
-
-# ███████ ████████  █████  ████████ ██  ██████ 
-# ██         ██    ██   ██    ██    ██ ██      
-# ███████    ██    ███████    ██    ██ ██      
-#      ██    ██    ██   ██    ██    ██ ██      
-# ███████    ██    ██   ██    ██    ██  ██████ 
-
-
 NAME		= libft.a
 HEADER		= libft.h
 
@@ -54,13 +46,6 @@ BOBJ		= $(BSRC:.c=.o)
 GNLOBJ		= $(GNLSRC:.c=.o)
 PRNTOBJ		= $(PRNTSRC:.c=.o)
 
-# ██████  ███████  ██████ ██ ██████  ███████ 
-# ██   ██ ██      ██      ██ ██   ██ ██      
-# ██████  █████   ██      ██ ██████  █████   
-# ██   ██ ██      ██      ██ ██      ██      
-# ██   ██ ███████  ██████ ██ ██      ███████ 
-
-
 all:		pre $(NAME) bonus print get_next_line post
 
 $(NAME):	$(OBJ)
@@ -86,7 +71,7 @@ fclean:		pre clean post
 
 re:			fclean all
 
-.PHONY:		re all clean fclean bonus
+.PHONY:		all clean fclean re bonus print get_next_line pre post
 
 pre:
 	@echo
@@ -103,11 +88,6 @@ so:
 			@$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC) $(BSRC) $(GNLSRC) $(PRNTSRC)
 			@gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ) $(GNLOBJ) $(PRNTOBJ)
 
-# ███    ██  ██████  ████████ ███████ 
-# ████   ██ ██    ██    ██    ██      
-# ██ ██  ██ ██    ██    ██    █████   
-# ██  ██ ██ ██    ██    ██    ██      
-# ██   ████  ██████     ██    ███████ 
 
 # To include this as a library in your project,
 # copy libft to lib folder copy includes to includes folder
