@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hurb <hurb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:35:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/20 14:02:05 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/02/22 18:04:59 by hurb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
+
+int	is_negative(char *str)
+{
+	int	sign;
+
+	sign = 1;
+	while (*str++ == '-')
+		sign *= -1;
+	return (sign);
+}
 
 float	ft_atof(const char *str)
 {
@@ -35,6 +45,7 @@ float	ft_atof(const char *str)
 	while (div--)
 		output /= 10;
 	output += ft_atoi(tmp);
+	output *= is_negative(tmp);
 	free(tmp);
 	return ((float)output);
 }

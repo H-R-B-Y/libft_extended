@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_arrclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurb <hurb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 12:22:48 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/22 14:47:46 by hurb             ###   ########.fr       */
+/*   Created: 2025/02/22 14:40:45 by hurb              #+#    #+#             */
+/*   Updated: 2025/02/22 18:36:02 by hurb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
-#include <stdlib.h>
+#include "include/libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_arrclear(void **chunks, void (*f)(void *))
 {
-	if (!lst || !*lst || !del)
+	void	**ch;
+
+	if (!chunks || !*chunks || !f)
 		return ;
-	if ((*lst)->next)
-		ft_lstclear(&((*lst)->next), del);
-	del((*lst)->content);
-	free(*lst);
-	*lst = 0;
+	ch = chunks;
+	while (*chunks)
+	{
+		f(*chunks);
+		*chunks = 0;
+		chunks++;
+	}
+	free(ch);
 }

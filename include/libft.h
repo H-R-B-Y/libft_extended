@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/20 13:55:33 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/02/24 02:19:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -426,8 +426,7 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
  * @return A new list containing the result of f applied to each list item
  */
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *)
-					);
+					void (*del)(void *));
 
 /**
  * @brief Get a list item by index
@@ -453,5 +452,36 @@ void			ft_lstiter_param(t_list *lst,
  * @param str str to convert to a float
  */
 float			ft_atof(const char *str);
+
+/**
+ * @brief iterates over the pointer addresses until it reaches NULL
+ * @param chunks the array to iterate over
+ * @warning chunks MUST BE NULL TERMINATED
+ */
+size_t			ft_arrlen(void **chunks);
+
+/**
+ * @brief free all items in an array (including the array ptr)
+ * @param chunks the array of pointers to free
+ * @param f the free function for the array items
+ * @warning chunks must be an array of heap allocated pointers
+ */
+void			ft_arrclear(void **chunks, void (*f)(void *));
+
+/**
+ * @brief convert an array to a list of items
+ * @param chunks the array to convert
+ * @warning if allocation fails the list will be free'd but not the array
+ */
+t_list			*ft_arrlist(void **chunks);
+
+/**
+ * @brief produces malloc'd array of the result of f
+ * @param arr array to iterate over
+ * @param f function to perform
+ * @param del delete function used when allocation f produces a null pointer
+ */
+void			**ft_arrmap(void **arr, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif

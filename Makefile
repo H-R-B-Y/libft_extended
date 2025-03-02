@@ -22,7 +22,8 @@ SRC			= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 			ft_substr.c ft_tolower.c ft_toupper.c ft_memmove.c
 # Extra functions
-SRC			+= ft_iswhitespace.c ft_splitquoted.c ft_splitfn.c ft_atof.c
+SRC			+= ft_iswhitespace.c ft_splitquoted.c ft_splitfn.c ft_atof.c ft_arrlen.c \
+			ft_arrclear.c ft_arrlist.c ft_arrmap.c
 
 # Bonus functions
 BSRC		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \

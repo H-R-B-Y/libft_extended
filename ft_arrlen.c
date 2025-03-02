@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurb <hurb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 12:22:48 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/22 14:47:46 by hurb             ###   ########.fr       */
+/*   Created: 2025/02/22 14:29:32 by hurb              #+#    #+#             */
+/*   Updated: 2025/02/22 18:35:52 by hurb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
-#include <stdlib.h>
+#include "include/libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+size_t	ft_arrlen(void **chunks)
 {
-	if (!lst || !*lst || !del)
-		return ;
-	if ((*lst)->next)
-		ft_lstclear(&((*lst)->next), del);
-	del((*lst)->content);
-	free(*lst);
-	*lst = 0;
+	size_t	i;
+
+	if (!chunks)
+		return (0);
+	i = 0;
+	while (chunks[i])
+	{
+		if (!chunks[i])
+			break ;
+		i++;
+	}
+	return (i);
 }
