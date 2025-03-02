@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/02/24 02:19:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/02 17:17:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,14 +371,14 @@ t_list			*ft_lstnew(void *content);
  * @param lst Pointer to the list
  * @param new Pointer to the new list item
  */
-void			ft_lstadd_front(t_list **lst, t_list *new);
+void			ft_lstadd_front(t_list **lst, t_list *new_node);
 
 /**
  * @brief Add a new list item to the back of a list
  * @param lst Pointer to the list
  * @param new Pointer to the new list item
  */
-void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstadd_back(t_list **lst, t_list *new_node);
 
 // Naviation
 
