@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:40:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/03/07 18:05:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:23:24 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	is_whitespace(char c)
 int	ft_atoi(const char *nptr)
 {
 	long	output;
-	int	sign;
+	int		sign;
 
 	output = 0;
 	sign = 1;

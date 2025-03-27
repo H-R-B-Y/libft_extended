@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:35:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/03/08 15:08:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:23:05 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ float	ft_atof(const char *str)
 	sign = 1;
 	if (*str && *str == '-' && str++)
 		sign *= -1;
-	while(*str != '\0' && *str != '.' && ft_isdigit(*str))
+	while (*str != '\0' && *str != '.' && ft_isdigit(*str))
 	{
 		output *= 10;
 		output += *str - '0';
