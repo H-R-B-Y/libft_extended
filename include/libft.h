@@ -6,12 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 16:02:17 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 16:14:53 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include "defined.h"
 
 # ifdef FT_INCLUDE_ALL
 #  define FT_INCLUDE_ARRAY
@@ -81,7 +83,6 @@
 #  include "vec3d.h"
 #  include "vec4d.h"
 #  include "ft_math.h"
-#  include "defined.h"
 # endif
 
 # ifdef FT_INCLUDE_HASHMAP

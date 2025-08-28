@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:19:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 15:43:20 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 18:05:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 int				spmc_rb_push(t_spmc_ringbuff *ringbuff, void *content)
 {
-	u32	tail;
+	u32		tail;
+	void	*expected;
 
 	if (!ringbuff)
 		return (RETURN_ERROR);
-	tail = __sync_fetch_and_add(&ringbuff->tail, 1) % SPMC_RINGBUFF_SZ;
-	if (ringbuff->content[tail].valid)
+	tail = __atomic_fetch_add(&ringbuff->tail, 1, __ATOMIC_ACQ_REL);
+	expected = NULL;
+	if (__atomic_compare_exchange_n(&ringbuff->content[tail % SPMC_RINGBUFF_SZ], &expected,
+		content, 0, __ATOMIC_ACQ_REL, __ATOMIC_ACQUIRE))
 	{
-		__sync_sub_and_fetch(&ringbuff->tail, 1);
-		return (RETURN_ERROR);
+		__atomic_fetch_add(&ringbuff->size, 1, __ATOMIC_ACQ_REL);
+		return (RETURN_OK);
 	}
-	else
-	{
-		__sync_synchronize();
-		ringbuff->content[tail]
-			= (t_spmc_rb_node){.content = content, .valid = 1};
-		__sync_add_and_fetch(&ringbuff->size, 1);
-	}
-	return (RETURN_OK);
+	__atomic_fetch_sub(&ringbuff->tail, 1, __ATOMIC_ACQ_REL);
+	return (RETURN_ERROR);
 }

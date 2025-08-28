@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:37:44 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 15:38:56 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 17:16:32 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ u64				spmc_rb_size(t_spmc_ringbuff *ringbuff)
 {
 	if (!ringbuff)
 		return (0);
-	return (__sync_fetch_and_or(&ringbuff->size, 0x00));
+	return (__atomic_load_n(&ringbuff->size, __ATOMIC_ACQUIRE));
 }
