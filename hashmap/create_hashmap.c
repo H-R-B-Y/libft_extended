@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   normalize.c                                        :+:      :+:    :+:   */
+/*   create_hashmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 18:29:00 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 12:27:47 by hbreeze          ###   ########.fr       */
+/*   Created: 2025/08/20 11:31:35 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/08/20 12:34:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "hash_map.h"
 
-MYFLOAT	normalize(MYFLOAT from, MYFLOAT too, MYFLOAT t)
+t_hashmap	create_hashmap(t_hashfnc hashfnc, t_hashcmp hashcmp)
 {
-	MYFLOAT	range;
-	
-	range = too - from;
-	if (range == 0)
-		return (0);
-	return ((t - from) / range);
+	return (
+		(t_hashmap){
+			.hash_cmp = hashcmp,
+			.hash_key = hashfnc,
+			.pairs = {0}
+		}
+	);
 }

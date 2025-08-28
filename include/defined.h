@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defined.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/04/04 13:18:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 12:30:11 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ typedef volatile s8 vs8;   ///<  8-bit volatile signed integer.
 typedef volatile s16 vs16; ///< 16-bit volatile signed integer.
 typedef volatile s32 vs32; ///< 32-bit volatile signed integer.
 typedef volatile s64 vs64; ///< 64-bit volatile signed integer.
+
+typedef enum e_returncode	t_returncode;
+enum e_returncode
+{
+	RETURN_OK,
+	RETURN_ERROR,
+	RETURN_FATAL,
+	RETURN_CODE_COUNT
+};
 
 
 #endif

@@ -3,7 +3,7 @@ LIBDIR			:= lib
 INCDIR			:= include
 
 
-SUBMODULES		:= mem conv ctype list array io rand string cdll math
+SUBMODULES		:= mem conv ctype list array io rand string cdll math hashmap
 
 # Final merged library
 NAME			:= libft.a
