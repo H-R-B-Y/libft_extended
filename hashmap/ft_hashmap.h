@@ -41,7 +41,7 @@ struct s_hashpair
 /**
  * @brief Add or Update a pair in a pair list
  * 
- * @note should only be called from source 
+ * @note should only be called from source
  * 
  * @param hashmap The hashmap object
  * @param head The head of the pair list
