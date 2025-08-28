@@ -1,5 +1,6 @@
 {
 	"files.associations": {
 		"ft_spmc_ringbuff.h": "c"
-	}
+	},
+	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
