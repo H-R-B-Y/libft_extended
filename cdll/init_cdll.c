@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:16 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 12:27:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 13:12:06 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_cdll.h"
 
-struct s_cdll_node	*init_node(void *data)
+struct s_cdll_node	*cdll_init_node(void *data)
 {
 	struct s_cdll_node	*node;
 
@@ -23,7 +23,7 @@ struct s_cdll_node	*init_node(void *data)
 	return (node);
 }
 
-void	delete_node(struct s_cdll_node **node, void (*del)(void *))
+void	cdll_delete_node(struct s_cdll_node **node, void (*del)(void *))
 {
 	if (!node || !*node)
 		return ;
@@ -33,7 +33,7 @@ void	delete_node(struct s_cdll_node **node, void (*del)(void *))
 	*node = 0;
 }
 
-t_cdll	*init_cdll(void)
+t_cdll	*cdll_init(void)
 {
 	t_cdll	*list;
 
@@ -43,7 +43,7 @@ t_cdll	*init_cdll(void)
 	return (list);
 }
 
-void	delete_cdll(t_cdll **list, void (*del)(void *))
+void	cdll_delete(t_cdll **list, void (*del)(void *))
 {
 	struct s_cdll_node	*tmp;
 	struct s_cdll_node	*node;
@@ -54,10 +54,10 @@ void	delete_cdll(t_cdll **list, void (*del)(void *))
 	while (tmp && tmp != (*list)->tail)
 	{
 		node = tmp->next;
-		delete_node(&tmp, del);
+		cdll_delete_node(&tmp, del);
 		tmp = node;
 	}
-	delete_node(&tmp, del);
+	cdll_delete_node(&tmp, del);
 	free(*list);
 	*list = 0;
 	return ;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_add_value.c                                   :+:      :+:    :+:   */
+/*   hm_add_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 11:38:50 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/20 12:34:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 13:06:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // TODO: Make some list functions so we dont have to do these loops here
 // Just like add back and maybe iter or something
-int			pair_add_value(t_hashmap *hashmap,
+int			hm_add_pair(t_hashmap *hashmap,
 	t_hashpair *head,
 	void *key,
 	void *value
@@ -39,12 +39,12 @@ int			pair_add_value(t_hashmap *hashmap,
 		node = node->next;
 	node->next = CALLOC(1, sizeof(t_hashpair));
 	if (!node->next)
-		return (RETURN_ERROR);
+		return (RETURN_FATAL);
 	(*node->next) = (t_hashpair){.key = key, .value = value, .next = 0};
 	return (RETURN_OK);
 }
 
-int			hash_add_value(t_hashmap *hashmap, void *key, void *value)
+int			hm_add_value(t_hashmap *hashmap, void *key, void *value)
 {
 	register unsigned int	hash;
 
@@ -55,7 +55,7 @@ int			hash_add_value(t_hashmap *hashmap, void *key, void *value)
 	{
 		hashmap->pairs[hash] = CALLOC(1, sizeof(t_hashpair));
 		if (!hashmap->pairs[hash])
-			return (RETURN_ERROR);
+			return (RETURN_FATAL);
 		(*hashmap->pairs[hash]) = (t_hashpair){
 			.key = key,
 			.value = value,
@@ -63,5 +63,5 @@ int			hash_add_value(t_hashmap *hashmap, void *key, void *value)
 		};
 		return (RETURN_OK);
 	}
-	return (pair_add_value(hashmap, hashmap->pairs[hash], key, value));
+	return (hm_add_pair(hashmap, hashmap->pairs[hash], key, value));
 }

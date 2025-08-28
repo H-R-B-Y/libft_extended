@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 11:55:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/20 12:34:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 13:08:43 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		*pair_get_value(t_hashmap *hashmap,
 	return (0);
 }
 
-void		*hash_get_value(t_hashmap *hashmap, const void *key)
+void		*hm_get_value(t_hashmap *hashmap, const void *key)
 {
 	register unsigned int	hash;
 

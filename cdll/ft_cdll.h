@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cdll.h                                             :+:      :+:    :+:   */
+/*   ft_cdll.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:28 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 12:23:58 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 13:20:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,34 @@ typedef struct s_cdll		t_cdll;
 
 struct s_cdll
 {
+	/// @brief The head of the cdll
 	struct s_cdll_node			*head;
+	/// @brief The tail of the cdll
 	struct s_cdll_node			*tail;
+	/// @brief The count of nodes in the cdll
 	size_t						count;
 };
 
 struct s_cdll_node
 {
+	/// @brief Next node
 	struct s_cdll_node	*next;
+	/// @brief Previous node
 	struct s_cdll_node	*prev;
+	/// @brief Pointer to data
 	void				*data;
 };
 
-t_cdll				*init_cdll(void);
-void				delete_cdll(t_cdll **list, void (*del)(void *));
+/// @brief Initiallise a new circular double linked list 
+/// @param  
+/// @return 
+t_cdll				*cdll_init(void);
+void				cdll_delete(t_cdll **list,
+						void (*del)(void *));
 
-struct s_cdll_node	*init_node(void *data);
-void				delete_node(struct s_cdll_node **node, void (*del)(void *));
+struct s_cdll_node	*cdll_init_node(void *data);
+void				cdll_delete_node(struct s_cdll_node **node,
+						void (*del)(void *));
 
 size_t				cdll_push_front(t_cdll *list, struct s_cdll_node *node);
 size_t				cdll_push_back(t_cdll *list, struct s_cdll_node *node);

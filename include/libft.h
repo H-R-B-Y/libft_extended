@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 10:02:32 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/28 12:53:11 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #  define FT_INCLUDE_STRING
 #  define FT_INCLUDE_CDLL
 #  define FT_INCLUDE_MATH
+#  define FT_INCLUDE_HASHMAP
 # endif
 
 # ifdef FT_INCLUDE_CORE
@@ -80,6 +81,10 @@
 #  include "vec4d.h"
 #  include "ft_math.h"
 #  include "defined.h"
+# endif
+
+# ifdef FT_INCLUDE_HASHMAP
+#  include "ft_hashmap.h"
 # endif
 
 #endif

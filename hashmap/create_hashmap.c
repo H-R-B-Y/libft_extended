@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_hashmap.c                                   :+:      :+:    :+:   */
+/*   hm_create_hashmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "hash_map.h"
 
-t_hashmap	create_hashmap(t_hashfnc hashfnc, t_hashcmp hashcmp)
+t_hashmap	hm_create(t_hashfnc hashfnc, t_hashcmp hashcmp)
 {
 	return (
 		(t_hashmap){
