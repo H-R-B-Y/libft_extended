@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_spmc_ringbuff.h                                 :+:      :+:    :+:   */
+/*   ft_mpmc_ringbuff.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:47:42 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 18:06:24 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/01 11:56:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 #  define __GNU_SOURCE
 # endif
 
-#ifndef FT_SPMC_RINGBUFF_H
-# define FT_SPMC_RINGBUFF_H
+#ifndef FT_MPMC_RINGBUFF_H
+# define FT_MPMC_RINGBUFF_H
 
 # include "ft_mem.h"
 # include "defined.h"
 
-# ifndef SPMC_RINGBUFF_SZ
-#  define SPMC_RINGBUFF_SZ 1024
+# ifndef MPMC_RINGBUFF_SZ
+#  define MPMC_RINGBUFF_SZ 1024
 # endif
 
-typedef struct s_spmc_ringbuff	t_spmc_ringbuff;
-struct s_spmc_ringbuff
+typedef struct s_mpmc_ringbuff	t_mpmc_ringbuff;
+struct s_mpmc_ringbuff
 {
-	void	*content[SPMC_RINGBUFF_SZ];
+	void	*content[MPMC_RINGBUFF_SZ];
 	vu32	head;
 	vu32	tail;
 	vu32	size;
@@ -38,9 +38,9 @@ struct s_spmc_ringbuff
  * 
  * @note: just returns the default values in a struct for copying
  * 
- * @return t_spmc_ringbuff 
+ * @return t_mpmc_ringbuff 
  */
-t_spmc_ringbuff	spmc_rb_create(void);
+t_mpmc_ringbuff	mpmc_rb_create(void);
 
 /**
  * @brief Destory a ring buffer
@@ -50,11 +50,11 @@ t_spmc_ringbuff	spmc_rb_create(void);
  * 
  * @param ringbuff 
  */
-void			spmc_rb_destroy(t_spmc_ringbuff *ringbuff);
+void			mpmc_rb_destroy(t_mpmc_ringbuff *ringbuff);
 
-int				spmc_rb_push(t_spmc_ringbuff *ringbuff, void *content);
-int				spmc_rb_pop(t_spmc_ringbuff *ringbuff, void **content);
+int				mpmc_rb_push(t_mpmc_ringbuff *ringbuff, void *content);
+int				mpmc_rb_pop(t_mpmc_ringbuff *ringbuff, void **content);
 
-u64				spmc_rb_size(t_spmc_ringbuff *s_spmc_ringbuff);
+u64				mpmc_rb_size(t_mpmc_ringbuff *s_mpmc_ringbuff);
 
 #endif

@@ -1,10 +1,10 @@
-NAME			:= libftspmc_ringbuff.a
+NAME			:= libftmpmc_ringbuff.a
 
 SRC				:= \
-				./spmc_ringbuff.c \
-				./spmc_ringbuff_size.c \
-				./spmc_ringbuff_push.c \
-				./spmc_ringbuff_pop.c
+				./mpmc_ringbuff.c \
+				./mpmc_ringbuff_size.c \
+				./mpmc_ringbuff_push.c \
+				./mpmc_ringbuff_pop.c
 
 
 

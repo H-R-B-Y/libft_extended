@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   spmc_ringbuff_pop.c                                :+:      :+:    :+:   */
+/*   mpmc_ringbuff_pop.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:19:07 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 18:05:49 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/01 11:56:59 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_spmc_ringbuff.h"
+#include "ft_mpmc_ringbuff.h"
 
-int				spmc_rb_pop(t_spmc_ringbuff *ringbuff, void **content)
+int				mpmc_rb_pop(t_mpmc_ringbuff *ringbuff, void **content)
 {
 	u32		head;
 	void	*stolen;
@@ -20,7 +20,7 @@ int				spmc_rb_pop(t_spmc_ringbuff *ringbuff, void **content)
 	if (!ringbuff || !content)
 		return (RETURN_ERROR);
 	head = __atomic_fetch_add(&ringbuff->head, 1, __ATOMIC_ACQ_REL);
-	stolen = __atomic_exchange_n(&ringbuff->content[head % SPMC_RINGBUFF_SZ],
+	stolen = __atomic_exchange_n(&ringbuff->content[head % MPMC_RINGBUFF_SZ],
 		NULL, __ATOMIC_ACQ_REL);
 	if (stolen != NULL)
 	{

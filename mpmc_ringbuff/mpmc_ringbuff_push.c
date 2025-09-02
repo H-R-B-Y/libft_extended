@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   spmc_ringbuff_push.c                               :+:      :+:    :+:   */
+/*   mpmc_ringbuff_push.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:19:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/29 14:03:47 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/01 11:56:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_spmc_ringbuff.h"
+#include "ft_mpmc_ringbuff.h"
 
-int				spmc_rb_push(t_spmc_ringbuff *ringbuff, void *content)
+int				mpmc_rb_push(t_mpmc_ringbuff *ringbuff, void *content)
 {
 	u32		tail;
 	void	*expected;
@@ -21,7 +21,7 @@ int				spmc_rb_push(t_spmc_ringbuff *ringbuff, void *content)
 		return (RETURN_ERROR);
 	tail = __atomic_fetch_add(&ringbuff->tail, 1, __ATOMIC_ACQ_REL);
 	expected = NULL;
-	if (__atomic_compare_exchange_n(&ringbuff->content[tail % SPMC_RINGBUFF_SZ], &expected,
+	if (__atomic_compare_exchange_n(&ringbuff->content[tail % MPMC_RINGBUFF_SZ], &expected,
 		content, 0, __ATOMIC_ACQ_REL, __ATOMIC_ACQUIRE))
 	{
 		__atomic_fetch_add(&ringbuff->size, 1, __ATOMIC_ACQ_REL);

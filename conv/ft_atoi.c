@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:40:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/19 16:03:59 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/01 12:08:09 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,28 @@ int	ft_atoi(const char *nptr)
 	if (*a_num)
 		return (0);
 	return (num * sign);
+}
+
+int	ft_atoi_unsafe(const char *nptr)
+{
+	long	output;
+	int		sign;
+
+	output = 0;
+	sign = 1;
+	if (*nptr == 0)
+		return (0);
+	while (ft_isspace(nptr))
+		nptr++;
+	if (*nptr == '+')
+		nptr++;
+	else if (*nptr == '-' && nptr++)
+		sign *= -1;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		output *= 10;
+		output += *nptr - '0';
+		nptr++;
+	}
+	return ((int)(output * sign));
 }

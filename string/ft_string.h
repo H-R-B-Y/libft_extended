@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:26:40 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 11:08:20 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/01 12:06:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,5 +223,17 @@ char			*ft_strrtrim(const char *s1, const char *set);
  * @warning Heap allocation needs to be free'd
  */
 char			*ft_strltrim(const char *s1, const char *set);
+
+/**
+ * @brief Combine strings from a vector into a single string.
+ * 
+ * @warning Heap allocated memory must be free'd
+ * @warning Array must be null terminated
+ * @warning Strings must be null terminated
+ * 
+ * @param arr Array of strings to join
+ * @return char* Single string contaning the strings from the array
+ */
+char	*ft_strvecjoin(const char **arr);
 
 #endif
