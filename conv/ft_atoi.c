@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:40:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/01 12:08:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/02 14:06:26 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 
-static int	ft_isspace(char *str)
+static int	ft_isspace(const char *str)
 {
 	unsigned int	i;
 
