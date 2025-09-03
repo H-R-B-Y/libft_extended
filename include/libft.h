@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 16:14:53 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/03 10:29:10 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@
 # endif
 
 # ifdef FT_INCLUDE_SPMC_RINGBUFF
-#  include "ft_spmc_ringbuff.h"
+#  include "ft_mpmc_ringbuff.h"
 # endif
 
 #endif
