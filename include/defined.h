@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:52:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/07 14:55:18 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,16 @@
 # define M_PI 3.14159265358979323846
 #endif
 
+/*
+The reason this is here is to allow for easy switching between float types,
+double types, and long double types for the entire project. This is useful for
+performance tuning and precision requirements.
+*/
 #ifndef MYFLOAT
 # define MYFLOAT float
 #endif
+
+typedef MYFLOAT				t_float;
 
 typedef uint8_t				t_u8;
 typedef uint16_t			t_u16;
@@ -46,9 +53,13 @@ typedef volatile t_s64		t_vs64;
 typedef enum e_returncode	t_returncode;
 enum e_returncode
 {
+	/// @brief Successful execution
 	RETURN_OK,
+	/// @brief Non-fatal error occurred
 	RETURN_ERROR,
+	/// @brief Fatal error occurred (suggest abort)
 	RETURN_FATAL,
+	/// @brief Count of return codes (not a return code itself)
 	RETURN_CODE_COUNT
 };
 

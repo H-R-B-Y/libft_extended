@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rand.c                                          :+:      :+:    :+:   */
+/*   ft_rand21.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 14:55:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 15:05:25 by hbreeze          ###   ########.fr       */
+/*   Created: 2025/06/22 14:29:37 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/09/07 15:05:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rand.h"
 
-static int *_get_seed_ptr(void)
+static int	_xorshift(void)
 {
 	static int	seed = RANDSEED;
 
-	return (&seed);
+	seed ^= seed << XOR_A;
+	seed ^= seed >> XOR_B;
+	seed ^= seed << XOR_C;
+	if (seed >= 0)
+		return (seed);
+	return (~seed + 1);
 }
 
-void	ft_srand(int seed)
-{
-	int	*seed_ptr;
-
-	seed_ptr = _get_seed_ptr();
-	*seed_ptr = seed;
-}
-
-static int	_xorshift(void)
-{
-	int	*seed_ptr;
-
-	seed_ptr = _get_seed_ptr();
-	*seed_ptr ^= *seed_ptr << XOR_A;
-	*seed_ptr ^= *seed_ptr >> XOR_B;
-	*seed_ptr ^= *seed_ptr << XOR_C;
-	if (*seed_ptr >= 0)
-		return (*seed_ptr);
-	return (~(*seed_ptr) + 1);
-}
-
-int	ft_rand(int min, int max)
+int	ft_rand2(int min, int max)
 {
 	int			this;
 
@@ -50,3 +34,7 @@ int	ft_rand(int min, int max)
 	return (this);
 }
 
+/*
+The problem with this is that the seed is defined at compile time.
+I want to make a version that can take its own seed.
+*/
