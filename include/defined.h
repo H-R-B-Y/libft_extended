@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:55:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/08 10:56:28 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ performance tuning and precision requirements.
 #ifndef MYFLOAT
 # define MYFLOAT float
 #endif
+
+# ifndef FREE_TYPEDEF
+#  define FREE_TYPEDEF
+typedef void				(*t_freefn)(void *);
+# endif
 
 typedef MYFLOAT				t_float;
 
