@@ -1,8 +1,13 @@
-NAME			:= libft{{module_name}}.a
+NAME			:= libftbitflags.a
 
 SRC				:= \
-{% for file in files%}{% if file.endswith('.c') %}				{{file}} \
-{%endif%}{% endfor %}				\
+				./bit_has_all_flags.c \
+				./bit_has_flag.c \
+				./bit_has_some_flags.c \
+				./bit_set_flags.c \
+				./bit_toggle_flags.c \
+				./bit_unset_flags.c \
+				\
 
 
 
@@ -10,7 +15,7 @@ OBJDIR			:= obj
 OBJ				:= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
 
 # module dependencies
-DEPS			:= {%for dep in deps %}{{dep}} {%endfor%}
+DEPS			:= 
 
 CC				:= gcc
 AR				:= ar rcs
