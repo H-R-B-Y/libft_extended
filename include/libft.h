@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/03 10:29:10 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/09 13:05:23 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 #  define FT_INCLUDE_CDLL
 #  define FT_INCLUDE_MATH
 #  define FT_INCLUDE_HASHMAP
-# define FT_INCLUDE_SPMC_RINGBUFF
+#  define FT_INCLUDE_SPMC_RINGBUFF
+#  define FT_INCLUDE_HEAP
 # endif
 
 # ifdef FT_INCLUDE_CORE
@@ -91,6 +92,10 @@
 
 # ifdef FT_INCLUDE_SPMC_RINGBUFF
 #  include "ft_mpmc_ringbuff.h"
+# endif
+
+# ifdef FT_INCLUDE_HEAP
+#  include "ft_heap.h"
 # endif
 
 #endif
