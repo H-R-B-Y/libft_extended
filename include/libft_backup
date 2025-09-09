@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft_backup                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 16:22:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/09 16:08:36 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 #  define FT_INCLUDE_HASHMAP
 #  define FT_INCLUDE_SPMC_RINGBUFF
 #  define FT_INCLUDE_HEAP
-/*define all*/
 # endif
 
 # ifdef FT_INCLUDE_CORE
@@ -98,7 +97,5 @@
 # ifdef FT_INCLUDE_HEAP
 #  include "ft_heap.h"
 # endif
-
-/*include here*/
 
 #endif

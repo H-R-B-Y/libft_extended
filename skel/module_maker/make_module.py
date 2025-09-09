@@ -110,6 +110,33 @@ class ModuleMaker:
 		header_filename = f"{self.module_dir}/ft_{self.module_name}.h"
 		with open(header_filename, "w") as f:
 			f.write(output)
+		return
+	
+	def link_back(self):
+		print("Linking back to libft.h")
+		# need to link the header back to libft.h
+		libft_header = "./include/libft.h"
+		if not os.path.exists(libft_header):
+			messagebox.showwarning("Warning", f"Could not find {libft_header} to link back the new module header.")
+			return
+		with open(libft_header, "r") as f:
+			lines = f.readlines()
+		main_line = f"#  define FT_INCLUDE_{self.module_name.upper()}\n"
+		include_lines = f"# ifdef FT_INCLUDE_{self.module_name.upper()}\n#  include \"ft_{self.module_name}.h\"\n# endif\n\n"
+		modified_lines = []
+		for line in lines:
+			if (line.strip() == "/*include here*/"):
+				modified_lines.append(include_lines)
+			elif (line.strip() == "/*define all*/"):
+				modified_lines.append(main_line)
+			modified_lines.append(line)
+		with open(libft_header, "w") as f:
+			f.writelines(modified_lines)
+		# Create symlink in include directory
+		symlink_target = f"../{self.module_dir}/ft_{self.module_name}.h"
+		symlink_path = f"./include/ft_{self.module_name}.h"
+		os.system(f"ln -sf {symlink_target} {symlink_path}")
+		print(f"Successfully linked ft_{self.module_name}.h to libft.h")
 
 	def create_module(self):
 		additional_files = self.file_entry.get("1.0", "end-1c").strip()
@@ -127,6 +154,7 @@ class ModuleMaker:
 		self.generate_files()
 		self.update_makefile()
 		self.update_header()
+		self.link_back()
 		messagebox.showinfo("Success", f"Module '{self.module_name}' created successfully.")
 		self.window.destroy()
 		self.root.destroy()
