@@ -29,6 +29,7 @@
 #  define FT_INCLUDE_HASHMAP
 #  define FT_INCLUDE_SPMC_RINGBUFF
 #  define FT_INCLUDE_HEAP
+#  define FT_INCLUDE_TIMER
 /*define all*/
 # endif
 
@@ -97,6 +98,10 @@
 
 # ifdef FT_INCLUDE_HEAP
 #  include "ft_heap.h"
+# endif
+
+# ifdef FT_INCLUDE_TIMER
+#  include "ft_timer.h"
 # endif
 
 /*include here*/
