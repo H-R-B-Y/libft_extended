@@ -98,5 +98,17 @@ t_vec3	matrix3d_transform(t_matrix3d mat, t_vec3 vec);
  */
 t_matrix3d	matrix3d_rotation(t_vec3 rotation);
 
+/**
+ * @brief Create a rotation matrix from a direction vector.
+ * 
+ * This function creates a rotation matrix that aligns the Z-axis with the given
+ * direction vector. It constructs an orthogonal basis using the direction as
+ * the Z-axis and two perpendicular vectors for X and Y axes.
+ * 
+ * @param direction Normalized direction vector (forward direction)
+ * @return t_matrix3d Rotation matrix that transforms from local to world space
+ */
+t_matrix3d	matrix3d_from_direction(t_vec3 direction);
+
 
 #endif // MATRIX3D_H

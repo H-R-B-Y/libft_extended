@@ -26,6 +26,8 @@ SRC			:= ./vec2d/vec2_dot_product.c \
 			./matrix3d/matrix3d_determinant.c \
 			./matrix3d/matrix3d_transpose.c \
 			./matrix3d/matrix3d_sub.c \
+			./matrix3d/matrix3d_rotation.c \
+			./matrix3d/matrix3d_from_direction.c \
 			./matrix2d/matrix2d_transpose.c \
 			./matrix2d/matrix2d_transform.c \
 			./matrix2d/matrix2d_scalar_multiply.c \
