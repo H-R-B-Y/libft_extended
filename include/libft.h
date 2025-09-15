@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 16:22:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/15 16:50:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 # endif
 
 # ifdef FT_INCLUDE_ARRAY
-#  include "ft_arr.h"
+#  include "ft_array.h"
 # endif
 
 # ifdef FT_INCLUDE_CONV

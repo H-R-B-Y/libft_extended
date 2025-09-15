@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 16:37:45 by cquinter          #+#    #+#             */
-/*   Updated: 2025/08/26 10:54:39 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/10 10:24:01 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arr.h"
+#include "ft_array.h"
 #include <stdlib.h>
 
 size_t	ft_arrlcat(void **dest, void **src, size_t size)

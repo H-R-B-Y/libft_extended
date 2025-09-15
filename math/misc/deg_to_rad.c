@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrfree.c                                       :+:      :+:    :+:   */
+/*   deg_to_rad.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 00:49:53 by cquinter          #+#    #+#             */
-/*   Updated: 2025/09/10 10:24:01 by hbreeze          ###   ########.fr       */
+/*   Created: 2025/09/15 16:45:48 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/09/15 16:46:01 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_array.h"
+#include "ft_math.h"
 
-void	ft_arrfree(void **chunks)
+MYFLOAT	deg_to_rad(MYFLOAT degrees)
 {
-	void	**ch;
+	return (degrees * (M_PI / 180.0f));
+}
 
-	if (!chunks)
-		return ;
-	ch = chunks;
-	while (*chunks)
-	{
-		free(*chunks);
-		*chunks = 0;
-		chunks++;
-	}
-	free(ch);
+MYFLOAT	rad_to_deg(MYFLOAT radians)
+{
+	return (radians * (180.0f / M_PI));
 }

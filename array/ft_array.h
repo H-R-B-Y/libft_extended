@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arr.h                                           :+:      :+:    :+:   */
+/*   ft_array.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARR_H
-# define FT_ARR_H
+#ifndef FT_ARRAY_H
+# define FT_ARRAY_H
 # include "ft_mem.h"
 # include "ft_list.h"
 # include "ft_string.h"

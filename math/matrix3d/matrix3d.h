@@ -90,5 +90,13 @@ t_matrix3d	matrix3d_inverse(t_matrix3d mat);
  */
 t_vec3	matrix3d_transform(t_matrix3d mat, t_vec3 vec);
 
+/**
+ * @brief Create a rotation matrix from Euler angles (in radians).
+ *
+ * @param rotation The rotation angles (pitch, yaw, roll).
+ * @return t_matrix3d The resulting rotation matrix.
+ */
+t_matrix3d	matrix3d_rotation(t_vec3 rotation);
+
 
 #endif // MATRIX3D_H

@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:44:22 by hurb              #+#    #+#             */
-/*   Updated: 2025/08/26 10:57:45 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/10 10:24:01 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arr.h"
+#include "ft_array.h"
 
 static inline void	do_nothing(void *v)
 {
