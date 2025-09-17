@@ -30,6 +30,7 @@
 #  define FT_INCLUDE_SPMC_RINGBUFF
 #  define FT_INCLUDE_HEAP
 #  define FT_INCLUDE_TIMER
+#  define FT_INCLUDE_COLOUR
 /*define all*/
 # endif
 
@@ -102,6 +103,10 @@
 
 # ifdef FT_INCLUDE_TIMER
 #  include "ft_timer.h"
+# endif
+
+# ifdef FT_INCLUDE_COLOUR
+#  include "ft_colour.h"
 # endif
 
 /*include here*/

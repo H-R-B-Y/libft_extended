@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/08 10:56:28 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/17 13:00:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,30 @@ performance tuning and precision requirements.
 #ifndef MYFLOAT
 # define MYFLOAT float
 #endif
+# ifndef EPSILON
+#  define EPSILON 0.00001f
+# endif
+
+# ifndef ENDIANNESS
+#  ifdef __BYTE_ORDER__
+#   if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+#    define ENDIANNESS 0
+#   else
+#    define ENDIANNESS 1
+#   endif
+#  else
+#   ifdef _WIN32
+#    define ENDIANNESS 0
+#   else
+#    include <endian.h>
+#    if __BYTE_ORDER == __LITTLE_ENDIAN
+#     define ENDIANNESS 0
+#    else
+#     define ENDIANNESS 1
+#    endif
+#   endif
+#  endif
+# endif
 
 # ifndef FREE_TYPEDEF
 #  define FREE_TYPEDEF
