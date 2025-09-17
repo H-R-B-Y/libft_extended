@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:21:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/16 16:13:59 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/25 15:07:20 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 #  define FT_INCLUDE_SPMC_RINGBUFF
 #  define FT_INCLUDE_HEAP
 #  define FT_INCLUDE_TIMER
+#  define FT_INCLUDE_COLOUR
 /*define all*/
 # endif
 
@@ -102,6 +103,14 @@
 
 # ifdef FT_INCLUDE_TIMER
 #  include "ft_timer.h"
+# endif
+
+# ifdef FT_INCLUDE_COLOUR
+#  include "ft_colour.h"
+# endif
+
+# ifdef FT_INCLUDE_ENUM_MACRO
+#  include "ft_enum_macro.h"
 # endif
 
 /*include here*/

@@ -73,8 +73,6 @@ SRC			:= ./vec2d/vec2_dot_product.c \
 			./vec3d/vec3_perpendicular.c \
 			./vec3d/vec3_div_scalar.c \
 			./vec3d/vec3_sub.c \
-			./colours/colour_get.c \
-			./colours/colour_rgba.c \
 			./matrix4d/matrix4d_rotate_x.c \
 			./matrix4d/matrix4d_sub.c \
 			./matrix4d/matrix4d_rotate_y.c \

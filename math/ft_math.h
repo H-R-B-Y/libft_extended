@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:11:38 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/15 16:48:17 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/17 13:07:47 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,25 +78,5 @@ MYFLOAT	deg_to_rad(MYFLOAT degrees);
  * @return MYFLOAT degrees
  */
 MYFLOAT	rad_to_deg(MYFLOAT radians);
-
-//  ██████  ██████  ██       ██████  ██    ██ ██████  
-// ██      ██    ██ ██      ██    ██ ██    ██ ██   ██ 
-// ██      ██    ██ ██      ██    ██ ██    ██ ██████  
-// ██      ██    ██ ██      ██    ██ ██    ██ ██   ██ 
-//  ██████  ██████  ███████  ██████   ██████  ██   ██ 
-
-t_u8	rgba_get_red(t_u32 colour);
-t_u8	rgba_get_green(t_u32 colour);
-t_u8	rgba_get_blue(t_u32 colour);
-t_u8	rgba_get_alph(t_u32 colour);
-
-t_u32	colour_rgba(t_u8 red,
-				t_u8 green,
-				t_u8 blue,
-				t_u8 alpha);
-
-t_u32	lerp_colour(t_u32 from, t_u32 too, float t);
-
-t_u32	parse_rgba_str(const char *rgba);
 
 #endif
