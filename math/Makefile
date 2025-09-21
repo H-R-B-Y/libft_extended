@@ -57,6 +57,7 @@ SRC			:= ./vec2d/vec2_dot_product.c \
 			./misc/lerp.c \
 			./misc/maprange.c \
 			./vec3d/vec3_clamp.c \
+			./vec3d/vec3_cross.c \
 			./vec3d/vec3_normalise.c \
 			./vec3d/vec3_add.c \
 			./vec3d/vec3_angle.c \
