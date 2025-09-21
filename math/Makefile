@@ -53,6 +53,7 @@ SRC			:= ./vec2d/vec2_dot_product.c \
 			./vec4d/vec4_rotate.c \
 			./vec4d/vec4_normalise.c \
 			./vec4d/vec4_scalar_mult.c \
+			./misc/deg_to_rad.c \
 			./misc/normalize.c \
 			./misc/lerp.c \
 			./misc/maprange.c \
