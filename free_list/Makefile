@@ -1,22 +1,22 @@
-NAME			:= libftmem.a
+NAME			:= libftfree_list.a
 
 SRC				:= \
-				./ft_bzero.c \
-				./ft_calloc.c \
-				./ft_dirtyswap.c \
-				./ft_memchr.c \
-				./ft_memcmp.c \
-				./ft_memcpy.c \
-				./ft_memmove.c \
-				./ft_memset.c \
-				./ft_realloc.c
+				./next_node.c \
+				./free_list.c \
+				./fragment.c \
+				./defrag.c \
+				./dealloc.c \
+				./alloc.c \
+				./conv.c \
+				\
+
 
 
 OBJDIR			:= obj
 OBJ				:= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
 
 # module dependencies
-DEPS			:= 
+DEPS			:= mem 
 
 CC				:= gcc
 AR				:= ar rcs

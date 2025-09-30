@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:23:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 11:01:21 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/09/30 14:03:45 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,17 @@ void			*ft_memchr(const void *s, int c, size_t n);
  * @return 0 if the memory regions are equal, a non 0 int otherwise
  */
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/**
+ * @brief Reallocate memory
+ *
+ * @warning This function does not match the standard realloc signature
+ * 
+ * @param ptr Pointer to the memory to reallocate
+ * @param old_size Size of the old memory block
+ * @param new_size Size of the new memory block
+ * @return void* Pointer to the new memory block or NULL if allocation fails
+ */
+void			*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 
 #endif

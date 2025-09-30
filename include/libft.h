@@ -31,6 +31,7 @@
 #  define FT_INCLUDE_HEAP
 #  define FT_INCLUDE_TIMER
 #  define FT_INCLUDE_COLOUR
+#  define FT_INCLUDE_FREE_LIST
 /*define all*/
 # endif
 
@@ -107,6 +108,10 @@
 
 # ifdef FT_INCLUDE_COLOUR
 #  include "ft_colour.h"
+# endif
+
+# ifdef FT_INCLUDE_FREE_LIST
+#  include "ft_free_list.h"
 # endif
 
 /*include here*/

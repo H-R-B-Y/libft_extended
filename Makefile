@@ -5,7 +5,7 @@ INCDIR			:= include
 CFLAGS			:= -Wall -Wextra -Werror -std=c99
 
 
-SUBMODULES		:= mem conv ctype list array io rand string cdll math hashmap mpmc_ringbuff heap bitflags timer colour
+SUBMODULES		:= mem conv ctype list array io rand string cdll math hashmap mpmc_ringbuff heap bitflags timer colour free_list
 
 # Work out how to conditionally add modules that are not in the list of submodles
 # for things like gnu source threading with atomics 
