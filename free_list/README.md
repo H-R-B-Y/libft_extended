@@ -67,3 +67,13 @@ Example:
 This implementation was designed for the a ray tracing project, while it may not be the best implementation due to the wasted space for metadata, it should be good enough for the purpose of the project.
 
 
+## TODO
+
+ - Currently each node has a pointer to its content, this is incredibly redundant as the content is always located contiguously after the node. This pointer can be removed to save space.
+ - Implement `used_size` tracking in `t_free_list`.
+
+### Fututre ideas to test out
+
+- Remove the node data from the allocations to be more memory efficient, though we will need to find a way to track 'free's' that dont have enough space for the node metadata.
+- Implement Max Heap for finding best fit allocations. (Max heap might not be the best approach)
+- Abstract the relative offset logic for easier reuse in other projects.
