@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:28 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/05 12:20:39 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/05 19:14:56 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,10 @@ struct s_cdll_node	*cdll_pop_back(t_cdll *list);
  * TODO: update this comment, does the node get removed from the list?
  */
 struct s_cdll_node	*cdll_get(t_cdll *list, size_t i);
+
+struct s_cdll_node	*cdll_find(t_cdll *list, void *data,
+						int (*cmp)(void *, void *));
+
+void				cdll_remove_node(t_cdll *list, struct s_cdll_node *node, void (*del)(void *));
 
 #endif
