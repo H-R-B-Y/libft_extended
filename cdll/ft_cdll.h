@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:28 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/28 14:35:29 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/05 12:20:39 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,27 @@ struct s_cdll_node
 /**
  * @brief Initialise a new cdll
  * 
- * @note this needs to return the struct not the pointer to heap allocation
- * 
  * @return t_cdll* The new cdll
  */
-t_cdll				*cdll_init(void);
+t_cdll				cdll_init(void);
 
 /**
- * @brief Delete a cdll object
+ * @brief Create a new cdll on the heap
+ */
+t_cdll				*cdll_create(void);
+
+/**
+ * @brief destory the internal data of cdll
+ */
+void				cdll_destroy(t_cdll *list, void (*del)(void *));
+
+/**
+ * @brief Delete a cdll object and free the pointer to it
  * 
  * @param list Pointer to a pointer to the list
  * @param del the function used to delete node contents
  */
-void				cdll_delete(t_cdll **list,
+void				cdll_free(t_cdll *list,
 						void (*del)(void *));
 
 /**
