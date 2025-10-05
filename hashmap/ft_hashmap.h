@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 11:06:09 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:48:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/05 19:11:12 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,12 @@ int			hm_add_value(t_hashmap *hashmap,
  */
 void		*hm_get_value(t_hashmap *hashmap, const void *key);
 
+void		hm_remove_pair(t_hashmap *hashmap, const void *key);
+
 /*
 TODO:
 
-Funcitons for removing pairs/keys from the hashmap
+Functions for removing pairs/keys from the hashmap (DONE / UNTESTED)
 
 Generic functions for iterating / adding / removing pairs
 
