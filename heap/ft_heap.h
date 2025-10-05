@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:27:06 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 13:31:54 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/05 12:02:06 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "ft_mem.h"
 # include "defined.h"
+
+typedef struct s_heap	t_heap;
 
 struct s_heap
 {
