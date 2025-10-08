@@ -4,7 +4,9 @@ SRC				:= \
 				./create_hashmap.c \
 				./destroy_hashmap.c \
 				./hash_add_value.c \
-				./hash_get_value.c
+				./hash_get_value.c \
+				./hashmap_remove.c \
+				\
 
 
 

@@ -5,7 +5,9 @@ SRC				:= \
 				./push_cdll.c \
 				./init_cdll.c \
 				./cdll_get.c \
-				init_cdll_node.c
+				init_cdll_node.c \
+				cdll_find.c \
+				cdll_remove_node.c \
 	
 OBJDIR			:= obj
 OBJ				:= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
