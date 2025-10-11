@@ -9,7 +9,8 @@ SRC				:= \
 				./ft_memcpy.c \
 				./ft_memmove.c \
 				./ft_memset.c \
-				./ft_realloc.c
+				./ft_realloc.c \
+				./ft_memdup.c
 
 
 OBJDIR			:= obj

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:23:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 14:03:45 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/11 13:04:52 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,14 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
  * @return void* Pointer to the new memory block or NULL if allocation fails
  */
 void			*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+
+/**
+ * @brief Duplicate a memory region
+ * 
+ * @param src Src data
+ * @param size Size in bytes of src data
+ * @return void* heap allocated copy of the data
+ */
+void	*ft_memdup(void *src, size_t size);
 
 #endif

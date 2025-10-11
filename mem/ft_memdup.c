@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:18:30 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/11 13:02:41 by hbreeze          ###   ########.fr       */
+/*   Created: 2025/10/11 13:00:07 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/10/11 13:01:47 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mem.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memdup(void *src, size_t size)
 {
-	register unsigned char	*d;
-	register size_t			i;
+	char	*dest;
 
-	if (!dest && !src)
+	if (!src || size == 0)
 		return (0);
+	dest = ft_calloc(1, size);
 	if (!dest)
 		return (0);
-	i = 0;
-	d = dest;
-	while (i < n)
-	{
-		d[i] = ((unsigned char *)src)[i];
-		i++;
-	}
+	ft_memmove(dest, src, size);
 	return (dest);
 }
