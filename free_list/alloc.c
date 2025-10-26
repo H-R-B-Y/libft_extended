@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:57:13 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 13:11:47 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/26 15:41:10 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	*checkout(
 	return ((void *)(list->arena + node->content));
 }
 // TODO: update usage statistics
-void			*checkout_free_list(t_free_list *list, size_t size)
+t_free_list_ptr	checkout_free_list(t_free_list *list, size_t size)
 {
 	t_free_list_node	*node;
 	t_u32				*last_next;
@@ -43,7 +43,8 @@ void			*checkout_free_list(t_free_list *list, size_t size)
 	{
 		node = (t_free_list_node *)((void *)list->arena + node_offset);
 		if (node->size >= size)
-			return (checkout(list, size, node, last_next));
+			return (free_list_get_offset(list,
+					checkout(list, size, node, last_next)));
 		last_next = &node->next;
 		node_offset = node->next;
 	}

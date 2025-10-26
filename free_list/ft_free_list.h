@@ -12,6 +12,7 @@
 // pollution
 typedef struct s_free_list_node	t_free_list_node;
 typedef struct s_free_list		t_free_list;
+typedef t_u32					t_free_list_ptr;
 
 struct s_free_list_node
 {
@@ -44,29 +45,15 @@ t_returncode	init_free_list(t_free_list *list, size_t total_size);
  */
 void			destroy_free_list(t_free_list *list);
 
-/**
- * @brief Create a free list object (allocates memory for the struct).
- * 
- * @param total_size Total size of the memory arena
- * @return t_free_list* Pointer to the created free list
- */
-t_free_list		*create_free_list(size_t total_size);
-
-/**
- * @brief Free a free list object (frees the memory used by the struct).
- * 
- * @param list Pointer to the list to free
- */
-void			free_free_list(t_free_list *list);
 
 /**
  * @brief Allocate memory from the free list.
  * 
  * @param list Pointer to the list to allocate from 
  * @param size Size of the memory to allocate
- * @return void* Pointer to the allocated memory, or NULL if allocation failed
+ * @return Offset to the allocated region or 0 if allocation fails
  */
-void			*checkout_free_list(t_free_list *list, size_t size);
+t_free_list_ptr		checkout_free_list(t_free_list *list, size_t size);
 
 /**
  * @brief Return memory back to the free list.
@@ -76,7 +63,7 @@ void			*checkout_free_list(t_free_list *list, size_t size);
  * @param size Size of the memory being returned
  * @return t_returncode RETURN_OK on success, RETURN_ERROR on failure
  */
-t_returncode	return_free_list(t_free_list *list, void *ptr);
+t_returncode	return_free_list(t_free_list *list, t_free_list_ptr ptr);
 
 
 /**
@@ -104,6 +91,20 @@ t_u32			fragment_node(t_free_list *list, t_u32 node_offset, size_t size);
  * @return t_returncode RETURN_OK on success, RETURN_ERROR on failure
  * or RETURN_FATAL if memory allocation fails
  */
-t_returncode resize_free_list(t_free_list *list, size_t new_size);
+t_returncode	resize_free_list(t_free_list *list, size_t new_size);
+
+static inline void *free_list_get_ptr(t_free_list *list, t_free_list_ptr offset)
+{
+	if (!list || !list->arena || offset == FREE_LIST_NULL_OFFSET)
+		return (0);
+	return ((char *)list->arena + offset);
+}
+
+static inline t_free_list_ptr free_list_get_offset(t_free_list *list, void *ptr)
+{
+	if (!list || !list->arena || !ptr)
+		return (FREE_LIST_NULL_OFFSET);
+	return ((char *)ptr - (char *)list->arena);
+}
 
 #endif

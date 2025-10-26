@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:52:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 13:31:43 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/26 15:39:59 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void			*offset_to_ptr(t_free_list *list, t_u32 offset);
  */
 t_u32			ptr_to_offset(t_free_list *list, void *ptr);
 
-int ptr_is_part_of_freelist(t_free_list *list, void *ptr);
+int	ptr_is_part_of_freelist(t_free_list *list, void *ptr);
 
 int	node_is_contiguous(t_free_list *list,
 	t_free_list_node *left, t_free_list_node *right);

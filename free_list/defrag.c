@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:57:08 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 13:09:00 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/26 15:43:08 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	node_is_contiguous(t_free_list *list,
 	t_free_list_node *left, t_free_list_node *right)
 {
-	t_u32 left_offset;
-	t_u32 right_offset;
-	t_u32 expected_right_offset;
+	t_u32	left_offset;
+	t_u32	right_offset;
+	t_u32	expected_right_offset;
 
 	if (!list || !left || !right)
 		return (0);
