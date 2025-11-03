@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 13:00:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 17:14:12 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 #ifndef M_PI
 # define M_PI 3.14159265358979323846
 #endif
+
+# ifdef __DOXYGEN__
+#  define HEADER_STATIC_CONST static const
+# else
+#  define HEADER_STATIC_CONST __attribute__((unused)) static const
+# endif
 
 /*
 The reason this is here is to allow for easy switching between float types,
