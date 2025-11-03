@@ -32,6 +32,7 @@
 #  define FT_INCLUDE_TIMER
 #  define FT_INCLUDE_COLOUR
 #  define FT_INCLUDE_FREE_LIST
+#  define FT_INCLUDE_ALLOC_A
 /*define all*/
 # endif
 
@@ -112,6 +113,10 @@
 
 # ifdef FT_INCLUDE_FREE_LIST
 #  include "ft_free_list.h"
+# endif
+
+# ifdef FT_INCLUDE_ALLOC_A
+#  include "ft_alloc_a.h"
 # endif
 
 /*include here*/
