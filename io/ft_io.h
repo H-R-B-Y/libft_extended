@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:19:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 17:19:58 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:02:27 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ char	*get_next_line(int fd);
 # define _IO_LINE_BUF 0x0200
 #  include <stdio.h>
 
-int	ft_getvbuf(FILE *f)
+__attribute__((unused))
+static int			ft_getvbuf(FILE *f)
 {
 	if (f->_flags & _IO_UNBUFFERED)
 	{
@@ -83,12 +84,17 @@ int	ft_getvbuf(FILE *f)
 	return (_IOFBF);
 }
 
-HEADER_STATIC_CONST char *modes[0x1000] = {
-	[0] = NULL,
-	[_IONBF] = "No buffering",
-	[_IOLBF] = "Line buffering",
-	[_IOFBF] = "Full buffering"
-};
+__attribute__((unused))
+static const char	*ft_getvbufmode(int mode)
+{
+	if (mode & _IONBF)
+		return ("No buffering");
+	else if (mode & _IOLBF)
+		return ("Line buffering");
+	else if (mode & _IOFBF)
+		return ("Full buffering");
+	return ("Buffer mode not found");
+}
 
 # endif
 

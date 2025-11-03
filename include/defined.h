@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 17:14:12 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:06:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 
 # ifdef __DOXYGEN__
 #  define HEADER_STATIC_CONST static const
+#  define HEADER_STATIC       static
 # else
 #  define HEADER_STATIC_CONST __attribute__((unused)) static const
+#  define HEADER_STATIC       __attribute__((unused)) static const
 # endif
 
 /*
@@ -59,7 +61,7 @@ performance tuning and precision requirements.
 # endif
 
 # ifndef FREE_TYPEDEF
-#  define FREE_TYPEDEF
+#  define FREE_TYPEDEF 1
 typedef void				(*t_freefn)(void *);
 # endif
 
