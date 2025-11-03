@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:19:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 17:19:58 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/08/26 11:53:48 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_IO_H
 # define FT_IO_H
-# include "defined.h"
+
 # include "ft_string.h"
 
 /**
@@ -63,33 +63,5 @@ int		ft_fprintf(int fd, const char *str, ...);
  * @warning - Memory can leak if file descriptor is not read to the end
  */
 char	*get_next_line(int fd);
-
-
-# ifdef __GLIBC__
-# define _IO_UNBUFFERED 0x0002
-# define _IO_LINE_BUF 0x0200
-#  include <stdio.h>
-
-int	ft_getvbuf(FILE *f)
-{
-	if (f->_flags & _IO_UNBUFFERED)
-	{
-		return (_IONBF);
-	}
-	else if (f->_flags & _IO_LINE_BUF)
-	{
-		return (_IOLBF);
-	}
-	return (_IOFBF);
-}
-
-HEADER_STATIC_CONST char *modes[0x1000] = {
-	[0] = NULL,
-	[_IONBF] = "No buffering",
-	[_IOLBF] = "Line buffering",
-	[_IOFBF] = "Full buffering"
-};
-
-# endif
 
 #endif
