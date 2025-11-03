@@ -6,32 +6,33 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:27:25 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 10:57:30 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:56:37 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATRIX2D_H
-#define MATRIX2D_H
+# define MATRIX2D_H
 
-#include "defined.h"
-#include <math.h>
-#include "vec2d.h"  // Assuming you have vec2d operations in this header.
+# include "defined.h"
+# include <math.h>
+# include "vec2d.h"  // Assuming you have vec2d operations in this header.
 
-typedef union s_matrix2d
+typedef union u_matrix2d
 {
-
-	struct 
+	struct
 	{
-		t_vec2 x;  // First row (x values)
-		t_vec2 y;  // Second row (y values)
+		t_vec2	x;
+		t_vec2	y;
 	};
-	struct 
+	struct
 	{
-		MYFLOAT x1, y1;  // First row elements
-		MYFLOAT x2, y2;  // Second row elements
+		MYFLOAT	x1;
+		MYFLOAT	y1;
+		MYFLOAT	x2;
+		MYFLOAT	y2;
 	};
-	MYFLOAT m[2][2];  // 2D array representation
-} __attribute__((aligned(8))) t_matrix2d;
+	MYFLOAT	m[2][2];
+} __attribute__((aligned(8)))	t_matrix2d;
 
 // Function declarations
 
@@ -85,7 +86,7 @@ t_matrix2d	matrix2d_transpose(t_matrix2d mat);
  * @param mat The matrix.
  * @return The determinant of the matrix.
  */
-MYFLOAT	matrix2d_determinant(t_matrix2d mat);
+MYFLOAT		matrix2d_determinant(t_matrix2d mat);
 
 /**
  * @brief Inverse of a 2D matrix.
@@ -100,9 +101,6 @@ t_matrix2d	matrix2d_inverse(t_matrix2d mat);
  * @param vec The vector.
  * @return The transformed vector.
  */
-t_vec2	matrix2d_transform(t_matrix2d mat, t_vec2 vec);
-
-
-
+t_vec2		matrix2d_transform(t_matrix2d mat, t_vec2 vec);
 
 #endif // MATRIX2D_H

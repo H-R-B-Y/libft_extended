@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 19:14:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/11 12:32:07 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:03:34 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 // TODO: the head and tail of the cdll are not being set to null
 
-void	cdll_remove_node(t_cdll *list, struct s_cdll_node *node, void (*del)(void *))
+void	cdll_remove_node(
+	t_cdll *list,
+	struct s_cdll_node *node,
+	void (*del)(void *)
+)
 {
 	if (!list || !node || list->count == 0)
 		return ;

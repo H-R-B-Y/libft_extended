@@ -6,12 +6,12 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:28 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/05 19:14:56 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:04:05 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CDLL_H
-# define CDLL_H
+#ifndef FT_CDLL_H
+# define FT_CDLL_H
 
 # include <sys/types.h>
 # include <stdlib.h>
@@ -133,6 +133,8 @@ struct s_cdll_node	*cdll_get(t_cdll *list, size_t i);
 struct s_cdll_node	*cdll_find(t_cdll *list, void *data,
 						int (*cmp)(void *, void *));
 
-void				cdll_remove_node(t_cdll *list, struct s_cdll_node *node, void (*del)(void *));
+void				cdll_remove_node(t_cdll *list,
+						struct s_cdll_node *node,
+						void (*del)(void *));
 
 #endif

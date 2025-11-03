@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:23:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/11 13:04:52 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:02:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void			*ft_calloc(size_t nmemb, size_t size);
  */
 void			*ft_dirtyswap(void **a, void *b, void (*del)(void *));
 
-
 /**
  * @brief Set n bytes of a string to a character
  * @param str String to set
@@ -53,7 +52,6 @@ void			*ft_dirtyswap(void **a, void *b, void (*del)(void *));
  * @return Pointer to the string
  */
 void			*ft_memset(void *str, int c, size_t n);
-
 
 /**
  * @brief Copy n bytes from src to dest
@@ -110,6 +108,6 @@ void			*ft_realloc(void *ptr, size_t old_size, size_t new_size);
  * @param size Size in bytes of src data
  * @return void* heap allocated copy of the data
  */
-void	*ft_memdup(void *src, size_t size);
+void			*ft_memdup(void *src, size_t size);
 
 #endif

@@ -6,14 +6,18 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 12:48:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 13:30:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:07:43 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_heap.h"
 #include <unistd.h>
 
-void	write_heap(int fd, struct s_heap *heap, ssize_t	(*write_value)(int fd, void *buff))
+void	write_heap(
+	int fd,
+	struct s_heap *heap,
+	ssize_t (*write_value)(int fd, void *buff)
+)
 {
 	size_t	i;
 

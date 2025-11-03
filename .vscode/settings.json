@@ -4,7 +4,8 @@
 		"ft_string.h": "c",
 		"limits.h": "c",
 		"ft_mem.h": "c",
-		"free_list_internal.h": "c"
+		"free_list_internal.h": "c",
+		"matrix4d.h": "c"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

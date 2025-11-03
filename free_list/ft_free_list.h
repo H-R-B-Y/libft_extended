@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free_list.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 19:10:04 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/11/03 19:12:57 by hbreeze          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_FREE_LIST_H
 # define FT_FREE_LIST_H
@@ -6,7 +17,6 @@
 # include "ft_mem.h"
 # include <stdint.h>
 
-// Sentinel value for "no next node" - using max value since it's impossible as a real offset
 # define FREE_LIST_NULL_OFFSET UINT32_MAX
 
 // pollution
@@ -36,15 +46,14 @@ struct s_free_list
  * @param total_size Total size of the memory arena
  * @return t_returncode 
  */
-t_returncode	init_free_list(t_free_list *list, size_t total_size);
+t_returncode			init_free_list(t_free_list *list, size_t total_size);
 
 /**
  * @brief Free the memory arena inside the free list.
  * 
  * @param list Pointer to the list to destroy
  */
-void			destroy_free_list(t_free_list *list);
-
+void					destroy_free_list(t_free_list *list);
 
 /**
  * @brief Allocate memory from the free list.
@@ -53,7 +62,7 @@ void			destroy_free_list(t_free_list *list);
  * @param size Size of the memory to allocate
  * @return Offset to the allocated region or 0 if allocation fails
  */
-t_free_list_ptr		checkout_free_list(t_free_list *list, size_t size);
+t_free_list_ptr			checkout_free_list(t_free_list *list, size_t size);
 
 /**
  * @brief Return memory back to the free list.
@@ -63,15 +72,16 @@ t_free_list_ptr		checkout_free_list(t_free_list *list, size_t size);
  * @param size Size of the memory being returned
  * @return t_returncode RETURN_OK on success, RETURN_ERROR on failure
  */
-t_returncode	return_free_list(t_free_list *list, t_free_list_ptr ptr);
-
+t_returncode			return_free_list(
+							t_free_list *list,
+							t_free_list_ptr ptr);
 
 /**
  * @brief Defragment the free list by coalescing adjacent free blocks.
  * 
  * @param list Pointer to the free list
  */
-void			defragment_free_list(t_free_list *list);
+void					defragment_free_list(t_free_list *list);
 
 /**
  * @brief Fragment a free list node into smaller chunks.
@@ -81,7 +91,10 @@ void			defragment_free_list(t_free_list *list);
  * @param size Size of the first fragment
  * @return t_u32 Offset of the right fragment
  */
-t_u32			fragment_node(t_free_list *list, t_u32 node_offset, size_t size);
+t_u32					fragment_node(
+							t_free_list *list,
+							t_u32 node_offset,
+							size_t size);
 
 /**
  * @brief Resize the memory arena of a free list.
@@ -91,16 +104,22 @@ t_u32			fragment_node(t_free_list *list, t_u32 node_offset, size_t size);
  * @return t_returncode RETURN_OK on success, RETURN_ERROR on failure
  * or RETURN_FATAL if memory allocation fails
  */
-t_returncode	resize_free_list(t_free_list *list, size_t new_size);
+t_returncode			resize_free_list(
+							t_free_list *list,
+							size_t new_size);
 
-static inline void *free_list_get_ptr(t_free_list *list, t_free_list_ptr offset)
+HEADER_STATIC void	*free_list_get_ptr(
+						t_free_list *list,
+						t_free_list_ptr offset)
 {
 	if (!list || !list->arena || offset == FREE_LIST_NULL_OFFSET)
 		return (0);
 	return ((char *)list->arena + offset);
 }
 
-static inline t_free_list_ptr free_list_get_offset(t_free_list *list, void *ptr)
+HEADER_STATIC t_free_list_ptr	free_list_get_offset(
+									t_free_list *list,
+									void *ptr)
 {
 	if (!list || !list->arena || !ptr)
 		return (FREE_LIST_NULL_OFFSET);

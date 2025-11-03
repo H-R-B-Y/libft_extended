@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:19:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:02:27 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:58:18 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_IO_H
 # include "defined.h"
 # include "ft_string.h"
+# include <stdio.h>
 
 /**
  * @brief Write a character to a file descriptor
@@ -44,7 +45,7 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 // Handles the majority of printing in the string. (calls handle escape on %)
-int		ft_printf(const char *str, ...);
+int				ft_printf(const char *str, ...);
 
 /**
  * @brief print formatted string to the file descriptor fd
@@ -52,7 +53,7 @@ int		ft_printf(const char *str, ...);
  * @param str the string to format
  * @param vargs arguments to format the string with
  */
-int		ft_fprintf(int fd, const char *str, ...);
+int				ft_fprintf(int fd, const char *str, ...);
 
 /**
  * @brief Get the next line 
@@ -62,16 +63,14 @@ int		ft_fprintf(int fd, const char *str, ...);
  * @warning - Heap allocation must be free'd
  * @warning - Memory can leak if file descriptor is not read to the end
  */
-char	*get_next_line(int fd);
-
+char			*get_next_line(int fd);
 
 # ifdef __GLIBC__
-# define _IO_UNBUFFERED 0x0002
-# define _IO_LINE_BUF 0x0200
-#  include <stdio.h>
+#  define _IO_UNBUFFERED 0x0002
+#  define _IO_LINE_BUF 0x0200
 
 __attribute__((unused))
-static int			ft_getvbuf(FILE *f)
+static int	ft_getvbuf(FILE *f)
 {
 	if (f->_flags & _IO_UNBUFFERED)
 	{

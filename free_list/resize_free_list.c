@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:47:39 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 13:53:22 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:16 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	update_free_list_after_resize(t_free_list *list, size_t old_size)
 	defragment_free_list(list);
 }
 
-t_returncode resize_free_list(t_free_list *list, size_t new_size)
+t_returncode	resize_free_list(t_free_list *list, size_t new_size)
 {
 	void	*new_arena;
 	size_t	copy_size;
@@ -48,7 +48,7 @@ t_returncode resize_free_list(t_free_list *list, size_t new_size)
 	new_arena = ft_calloc(new_size, sizeof(char));
 	if (!new_arena)
 		return (RETURN_FATAL);
-	copy_size =  list->total_size;
+	copy_size = list->total_size;
 	if (new_size < list->used_size)
 		copy_size = new_size;
 	ft_memcpy(new_arena, list->arena, copy_size);

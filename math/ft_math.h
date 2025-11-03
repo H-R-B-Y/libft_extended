@@ -6,12 +6,12 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:11:38 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 13:07:47 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:51:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HB_MATH_EXT_H
-# define HB_MATH_EXT_H
+#ifndef FT_MATH_H
+# define FT_MATH_H
 
 # include <math.h>
 
@@ -69,7 +69,7 @@ MYFLOAT		maprange(t_vec2 from, t_vec2 too, MYFLOAT t);
  * @param degrees degrees
  * @return MYFLOAT radians
  */
-MYFLOAT	deg_to_rad(MYFLOAT degrees);
+MYFLOAT		deg_to_rad(MYFLOAT degrees);
 
 /**
  * @brief Convert radians to degrees.
@@ -77,6 +77,6 @@ MYFLOAT	deg_to_rad(MYFLOAT degrees);
  * @param radians radians
  * @return MYFLOAT degrees
  */
-MYFLOAT	rad_to_deg(MYFLOAT radians);
+MYFLOAT		rad_to_deg(MYFLOAT radians);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:35:01 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 12:57:53 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:07:16 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ struct s_heap	init_heap(
 	});
 }
 
-void			destroy_heap(struct s_heap *heap)
+void	destroy_heap(struct s_heap *heap)
 {
 	if (!heap)
 		return ;
 	if (heap->heap)
 		free(heap->heap);
-		
 }

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:38:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:52:59 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 MYFLOAT	vec4_magnitude(t_vec4 vec)
 {
 	return (sqrtf(vec.x * vec.x + vec.y * vec.y
-		+ vec.z * vec.z + vec.w * vec.w));
+			+ vec.z * vec.z + vec.w * vec.w));
 }

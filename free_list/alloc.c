@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:57:13 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/26 15:41:10 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:40 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "free_list_internal.h"
+#include "free_list_internal.h"
 
 static void	*checkout(
 	t_free_list *list,
@@ -21,11 +21,12 @@ static void	*checkout(
 {
 	if (node->size >= size + sizeof(t_free_list_node) + 1)
 		(*last_next) = fragment_node(list,
-			(void *)node - (void *)list->arena, size);
+				(void *)node - (void *)list->arena, size);
 	else
 		(*last_next) = node->next;
 	return ((void *)(list->arena + node->content));
 }
+
 // TODO: update usage statistics
 t_free_list_ptr	checkout_free_list(t_free_list *list, size_t size)
 {
@@ -48,6 +49,5 @@ t_free_list_ptr	checkout_free_list(t_free_list *list, size_t size)
 		last_next = &node->next;
 		node_offset = node->next;
 	}
-	return (0); // didnt find a valid space 
+	return (0);
 }
-

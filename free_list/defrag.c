@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:57:08 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/26 15:43:08 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	join_nodes(t_free_list *list,
  * 
  * @param list Pointer to the free list
  */
-void			defragment_free_list(t_free_list *list)
+void	defragment_free_list(t_free_list *list)
 {
 	t_free_list_node	*current_node;
 	t_free_list_node	*next;

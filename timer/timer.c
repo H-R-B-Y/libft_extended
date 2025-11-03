@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 12:53:51 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/13 13:11:05 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:03:19 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_mstime	time_in_ms(void)
 static t_mstime	*this_timer(void)
 {
 	static t_mstime	time[TIMER_MAX] = {0};
-	
+
 	return ((void *)time);
 }
 
@@ -51,4 +51,3 @@ t_mstime	end_timer(size_t timer)
 		return (0);
 	return (time_in_ms() - this_timer()[timer]);
 }
-

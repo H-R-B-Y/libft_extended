@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:47:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:48:25 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:14:56 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,3 @@ MYFLOAT	colour_distance(t_colour c1, t_colour c2)
 {
 	return (sqrtf(colour_distance_sq(c1, c2)));
 }
-
-

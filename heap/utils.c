@@ -6,13 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:39:07 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 13:30:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:06:07 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_heap.h"
 
-void			_heap_swapvalues(struct s_heap *heap, size_t index_a, size_t index_b)
+void	_heap_swapvalues(
+	struct s_heap *heap,
+	size_t index_a,
+	size_t index_b
+)
 {
 	void	*data;
 
@@ -25,14 +29,14 @@ void			_heap_swapvalues(struct s_heap *heap, size_t index_a, size_t index_b)
 	ft_memmove(heap->heap + (index_b * heap->item_sz), data, heap->item_sz);
 }
 
-ssize_t			heap_parent_index(
+ssize_t	heap_parent_index(
 	struct s_heap *heap,
 	size_t child_index
 )
 {
 	if (!heap || child_index > heap->size)
 		return (-1);
-	return((child_index - 1) / 2);
+	return ((child_index - 1) / 2);
 }
 
 t_returncode	heap_children(

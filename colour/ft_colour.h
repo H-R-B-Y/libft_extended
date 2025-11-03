@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_colour.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 19:15:36 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/11/03 20:44:42 by hbreeze          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_COLOUR_H
 # define FT_COLOUR_H
@@ -8,9 +19,11 @@
 
 # ifdef ENDIANNESS
 #  if ENDIANNESS == 0
+
 typedef union s_colour
 {
-	struct {
+	struct s_internal_colour_components
+	{
 		t_u8	b;
 		t_u8	g;
 		t_u8	r;
@@ -28,9 +41,11 @@ typedef struct s_colourf
 }	t_colourf;
 
 #  else
+
 typedef union s_colour
 {
-	struct {
+	struct s_internal_colour_components
+	{
 		t_u8	a;
 		t_u8	r;
 		t_u8	g;
@@ -52,10 +67,19 @@ typedef struct s_colourf
 #  error "Endianness not defined"
 # endif
 
-# define COLOUR_MAX (t_colour){.u = 0xFFFFFFFF}
-# define COLOURF_MAX (t_colourf){1.0f, 1.0f, 1.0f, 1.0f}
-# define COLOUR_MIN (t_colour){.u = 0x00000000}
-# define COLOURF_MIN (t_colourf){0.0f, 0.0f, 0.0f, 0.0f}
+# ifndef COLOUR_MAX
+#  warning compile with -DCOLOUR_MAX='((t_colour){.u = 0xFFFFFFFF})'
+# endif
+# ifndef COLOUR_MIN
+#  warning compile with -DCOLOUR_MIN='((t_colour){.u = 0x00000000})'
+# endif
+# ifndef COLOURF_MAX
+#  warning compile with -DCOLOURF_MAX='((t_colourf){1.0f, 1.0f, 1.0f, 1.0f})'
+# endif
+# ifndef COLOURF_MIN
+#  warning compile with -DCOLOURF_MIN='((t_colourf){0.0f, 0.0f, 0.0f, 0.0f})'
+# endif
+
 
 /**
  * @brief Add two colours.
@@ -76,7 +100,6 @@ t_colour	colour_add(t_colour c1, t_colour c2);
  * @return t_colour 
  */
 t_colour	colour_create(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
-
 
 /**
  * @brief Multiply two colours.

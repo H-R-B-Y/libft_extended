@@ -6,12 +6,12 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 11:06:09 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/05 19:11:12 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:02:31 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HASH_MAP_H
-# define HASH_MAP_H
+#ifndef FT_HASHMAP_H
+# define FT_HASHMAP_H
 
 # include <sys/types.h>
 
@@ -23,8 +23,8 @@
 # include "ft_mem.h"
 # define CALLOC ft_calloc
 
-typedef unsigned int (*t_hashfnc)(const void *);
-typedef int (*t_hashcmp)(const void *, const void *);
+typedef unsigned int		(*t_hashfnc)(const void *);
+typedef int					(*t_hashcmp)(const void *, const void *);
 typedef struct s_hashmap	t_hashmap;
 typedef struct s_hashpair	t_hashpair;
 
@@ -49,10 +49,10 @@ struct s_hashpair
  * @param value The value to set
  * @return int non 0 if error
  */
-int		hm_add_pair(t_hashmap *hashmap,
-			t_hashpair *head,
-			void *key,
-			void *value);
+int			hm_add_pair(t_hashmap *hashmap,
+				t_hashpair *head,
+				void *key,
+				void *value);
 
 /**
  * @brief Recursivly destroy a pair list setting pointer to pair to NULL
@@ -61,7 +61,7 @@ int		hm_add_pair(t_hashmap *hashmap,
  * 
  * @param pair Pointer to a Pointer to a pair
  */
-void	hm_destroy_pairlist(t_hashpair **pair);
+void		hm_destroy_pairlist(t_hashpair **pair);
 
 struct s_hashmap
 {

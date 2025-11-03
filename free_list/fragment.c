@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:25:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 13:09:58 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:04 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_u32	fragment_node(t_free_list *list, t_u32 node_offset, size_t size)
 	right_fragment->next = left_fragment->next;
 	right_fragment->size = left_fragment->size
 		- (sizeof(t_free_list_node) + size);
-	// left_fragment->next = node_offset + size;
 	left_fragment->size = size;
 	return (right_fragment_offset);
 }

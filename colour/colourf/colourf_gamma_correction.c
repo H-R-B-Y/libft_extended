@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 13:00:18 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 13:00:30 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:13:53 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_colourf	colourf_gamma_correction(t_colourf c, MYFLOAT gamma)
 	result = colourf_clamp(result, COLOURF_MIN, COLOURF_MAX);
 	return (result);
 }
+
 t_colourf	colourf_inverse_gamma_correction(t_colourf c, MYFLOAT gamma)
 {
 	t_colourf	result;

@@ -6,25 +6,29 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:06:35 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:39:09 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINED_H
 # define DEFINED_H
 
-#include <stdint.h>
+# include <stdint.h>
+# include <endian.h>
 
-#ifndef M_PI
-# define M_PI 3.14159265358979323846
-#endif
-
-# ifdef __DOXYGEN__
-#  define HEADER_STATIC_CONST static const
-#  define HEADER_STATIC       static
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif
+# ifndef __DOXYGEN__
+#  ifndef HEADER_STATIC_CONST
+#   warning compile with -DHEADER_STATIC_CONST="__attribute__((unused))"
+#  endif
+#  ifndef HEADER_STATIC
+#   warning compile with -DHEADER_STATIC="__attribute__((unused))"
+#  endif
 # else
-#  define HEADER_STATIC_CONST __attribute__((unused)) static const
-#  define HEADER_STATIC       __attribute__((unused)) static const
+#  define HEADER_STATIC
+#  define HEADER_STATIC_CONST
 # endif
 
 /*
@@ -32,9 +36,12 @@ The reason this is here is to allow for easy switching between float types,
 double types, and long double types for the entire project. This is useful for
 performance tuning and precision requirements.
 */
-#ifndef MYFLOAT
-# define MYFLOAT float
-#endif
+
+# ifndef MYFLOAT
+#  warning compile with -DMYFLOAT=float
+typedef float				t_float;
+#  define MYFLOAT 
+# endif
 # ifndef EPSILON
 #  define EPSILON 0.00001f
 # endif
@@ -50,7 +57,6 @@ performance tuning and precision requirements.
 #   ifdef _WIN32
 #    define ENDIANNESS 0
 #   else
-#    include <endian.h>
 #    if __BYTE_ORDER == __LITTLE_ENDIAN
 #     define ENDIANNESS 0
 #    else
@@ -62,7 +68,9 @@ performance tuning and precision requirements.
 
 # ifndef FREE_TYPEDEF
 #  define FREE_TYPEDEF 1
+
 typedef void				(*t_freefn)(void *);
+
 # endif
 
 typedef MYFLOAT				t_float;
@@ -99,6 +107,5 @@ enum e_returncode
 	/// @brief Count of return codes (not a return code itself)
 	RETURN_CODE_COUNT
 };
-
 
 #endif

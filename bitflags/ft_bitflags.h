@@ -6,14 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:05:02 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 15:16:38 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:02:54 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BITFLAGS_H
 # define FT_BITFLAGS_H
 
-#include "defined.h"
+# include "defined.h"
 
 typedef t_u64	t_bitfield;
 
