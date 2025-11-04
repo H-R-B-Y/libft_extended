@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 12:59:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/02 14:28:12 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/04 14:32:51 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ int	_allocate_more(
 	void *context
 )
 {
-	char	allocated_block[ALLOC_A_DEFAULT_BLOCK_SIZE];
+	char					allocated_block[ALLOC_A_DEFAULT_BLOCK_SIZE
+		+ sizeof(struct s_alloc_a_node)];
 	struct s_alloc_a_node	*new_node;
 
 	new_node = (struct s_alloc_a_node *)&allocated_block[0];
 	*addr = new_node;
-	new_node->size = ALLOC_A_DEFAULT_BLOCK_SIZE - sizeof(struct s_alloc_a_node);
+	new_node->size = ALLOC_A_DEFAULT_BLOCK_SIZE;
 	new_node->next = NULL;
 	if (size - ALLOC_A_DEFAULT_BLOCK_SIZE > 0)
 	{
@@ -48,7 +49,8 @@ int	ft_alloc_a_create(
 	void *context
 )
 {
-	char	allocated_block[ALLOC_A_DEFAULT_BLOCK_SIZE];
+	char				allocated_block[ALLOC_A_DEFAULT_BLOCK_SIZE
+		+ sizeof(struct s_alloc_a_node)];
 	struct s_alloc_a	alloc_a;
 	int					res;
 	size_t				rounded_size;
@@ -63,7 +65,7 @@ int	ft_alloc_a_create(
 	if (recursion_depth > ALLOC_A_MAX_RECURSION_DEPTH / 2)
 		return (-1);
 	alloc_a.free_list = (struct s_alloc_a_node *)&allocated_block[0];
-	alloc_a.free_list->size = ALLOC_A_DEFAULT_BLOCK_SIZE - sizeof(struct s_alloc_a_node);
+	alloc_a.free_list->size = ALLOC_A_DEFAULT_BLOCK_SIZE;
 	alloc_a.free_list->next = NULL;
 	alloc_a.used_memory = 0;
 	alloc_a.total_memory = rounded_size;
