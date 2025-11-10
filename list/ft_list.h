@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:22:09 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 11:51:13 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/10 14:24:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,13 @@ void			**ft_lstarr(t_list *lst);
 void			ft_lstiter_param(t_list *lst,
 					void (*f)(void *, void *),
 					void *param);
+
+/**
+ * @brief Sort a list (merge sort)
+ * @param lst Pointer to the list
+ * @param cmp Function to compare lst contents
+ * @return t_list head of sorted list
+ */
+t_list			*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
 
 #endif
