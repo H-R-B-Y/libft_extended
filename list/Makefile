@@ -13,7 +13,8 @@ SRC				:= \
 				./ft_lstmap_bonus.c \
 				./ft_lstnew_bonus.c \
 				./ft_lstpop.c \
-				./ft_lstsize_bonus.c
+				./ft_lstsize_bonus.c \
+				./ft_lstsort.c
 
 
 OBJDIR			:= obj

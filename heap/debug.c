@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 12:48:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 13:30:31 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/10/18 14:33:52 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	write_heap(int fd, struct s_heap *heap, ssize_t	(*write_value)(int fd, void
 	{
 		write_value(fd, heap_at_index(heap, i));
 		if (i != heap->size - 1)
-			write(fd, ", ", 2);
+			(void)(!write(fd, ", ", 2));
 		i++;
 	}
 }
