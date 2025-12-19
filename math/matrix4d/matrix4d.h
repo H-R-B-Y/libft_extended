@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:45:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 20:42:15 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:57:36 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,7 @@ t_matrix4d	matrix4d_rotate(MYFLOAT x_angle, MYFLOAT y_angle, MYFLOAT z_angle);
 /**
  * @brief Helper functions for matrix4d_inverse
  */
-MYFLOAT		det3x3(MYFLOAT a11, MYFLOAT a12, MYFLOAT a13,
-				MYFLOAT a21, MYFLOAT a22, MYFLOAT a23,
-				MYFLOAT a31, MYFLOAT a32, MYFLOAT a33);
+MYFLOAT		det3x3(t_vec3 row1, t_vec3 row2, t_vec3 row3);
 void		matrix4d_cofactor_row0(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
 void		matrix4d_cofactor_row1(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
 void		matrix4d_cofactor_row2(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);

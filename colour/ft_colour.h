@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:15:36 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 20:44:42 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:52:17 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,17 @@ typedef struct s_colourf
 # endif
 
 # ifndef COLOUR_MAX
-#  warning compile with -DCOLOUR_MAX='((t_colour){.u = 0xFFFFFFFF})'
+#  warning "compile with -DCOLOUR_MAX='((t_colour){.u = 0xFFFFFFFF})'"
 # endif
 # ifndef COLOUR_MIN
-#  warning compile with -DCOLOUR_MIN='((t_colour){.u = 0x00000000})'
+#  warning "compile with -DCOLOUR_MIN='((t_colour){.u = 0x00000000})'"
 # endif
 # ifndef COLOURF_MAX
-#  warning compile with -DCOLOURF_MAX='((t_colourf){1.0f, 1.0f, 1.0f, 1.0f})'
+#  warning "compile with -DCOLOURF_MAX='((t_colourf){1.0f, 1.0f, 1.0f, 1.0f})'"
 # endif
 # ifndef COLOURF_MIN
-#  warning compile with -DCOLOURF_MIN='((t_colourf){0.0f, 0.0f, 0.0f, 0.0f})'
+#  warning "compile with -DCOLOURF_MIN='((t_colourf){0.0f, 0.0f, 0.0f, 0.0f})'"
 # endif
-
 
 /**
  * @brief Add two colours.

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 20:39:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:57:43 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ performance tuning and precision requirements.
 
 # ifndef MYFLOAT
 #  warning compile with -DMYFLOAT=float
+
 typedef float				t_float;
+
 #  define MYFLOAT 
 # endif
 # ifndef EPSILON
