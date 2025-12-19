@@ -6,8 +6,8 @@ CFLAGS			?= -Wall -Wextra -Werror -std=c99
 
 ifndef override_flags
 # need to ensure these are always set - override prevents command line from changing these
-override CFLAGS	+=	-DHEADER_STATIC_CONST='__attribute__((unused))'\
-					-DHEADER_STATIC='__attribute__((unused))' \
+override CFLAGS	+=	-DHEADER_STATIC_CONST='static const __attribute__((unused))'\
+					-DHEADER_STATIC='static __attribute__((unused))' \
 					-DMYFLOAT=float \
 					-DCOLOUR_MAX='((t_colour){.u = 0xFFFFFFFF})' \
 					-DCOLOUR_MIN='((t_colour){.u = 0x00000000})' \
