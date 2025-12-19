@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:19:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:58:18 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:08:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_IO_H
 # define FT_IO_H
-# include "defined.h"
+
 # include "ft_string.h"
 # include <stdio.h>
 

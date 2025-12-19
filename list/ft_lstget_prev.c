@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix2d_identity.c                                :+:      :+:    :+:   */
+/*   ft_lstget_prev.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2025/12/19 12:08:55 by hbreeze          ###   ########.fr       */
+/*   Created: 2025/12/07 13:17:02 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/12/07 13:26:00 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_list.h"
 
-#include "matrix2d.h"
-
-t_matrix2d	matrix2d_identity(void)
+t_list	*ft_lstget_prev(t_list *head, t_list *node)
 {
-	t_matrix2d	result;
+	t_list	*current;
+	t_list	*prev;
 
-	result = (t_matrix2d){{
-	result = (t_matrix2d){{
-		.x = (t_vec2){.x = 1, .y = 0},
-		.y = (t_vec2){.x = 0, .y = 1}
-	}};
-	}};
-	return (result);
+	if (!head)
+		return (NULL);
+	if (!head->next)
+		return (head);
+	if (node == head)
+		return (ft_lstlast(head));
+	current = head;
+	prev = NULL;
+	while (current && current != node)
+	{
+		prev = current;
+		current = current->next;
+	}
+	if (!current)
+		return (NULL);
+	return (prev);
 }

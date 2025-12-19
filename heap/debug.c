@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 12:48:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 20:07:43 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:07:39 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	write_heap(
 	{
 		write_value(fd, heap_at_index(heap, i));
 		if (i != heap->size - 1)
-			write(fd, ", ", 2);
+			(void)(!write(fd, ", ", 2));
 		i++;
 	}
 }

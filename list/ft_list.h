@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:22:09 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 11:51:13 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/07 13:28:27 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,42 @@ void			**ft_lstarr(t_list *lst);
 void			ft_lstiter_param(t_list *lst,
 					void (*f)(void *, void *),
 					void *param);
+
+/**
+ * @brief Sort a list (merge sort)
+ * @param lst Pointer to the list
+ * @param cmp Function to compare lst contents
+ * @return t_list head of sorted list
+ */
+t_list			*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
+
+/**
+ * @brief Function to get previous node from a list
+ * @param head the head of the list to search
+ * @param node the node to find the previous node from
+ * @return t_list * the node previous to node arg, or NULL
+ */
+t_list			*ft_lstget_prev(t_list *head,
+					t_list *node);
+
+/**
+ * @brief Get the index of the node node in the list head
+ * 
+ * @param head The head of the list to search
+ * @param node The node to get the index for
+ * @return ssize_t Either the index of the search node or -1
+ */
+ssize_t			ft_lstindex_of(
+					t_list *head, t_list *node);
+
+/**
+ * @brief Get the index of the node whos content is equal to content
+ * 
+ * @param head The head of the list to search
+ * @param content The content to search for
+ * @return ssize_t Either the index of the node whos content matches or -1
+ */
+ssize_t			ft_lstindex_of_content(
+					t_list *head, void *content);
 
 #endif
