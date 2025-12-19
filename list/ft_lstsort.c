@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:04:42 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/10 14:38:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:11:16 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_list.h"
+#include "ft_list.h"
 
 static t_list	*split(t_list *lst)
 {
