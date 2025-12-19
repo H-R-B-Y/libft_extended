@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:51:27 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:51:39 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:15:34 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ t_colour	colour_multiply(t_colour c1, t_colour c2)
 	if (steps[3] > 255)
 		steps[3] = 255;
 	result = colour_create((t_u8)steps[0],
-		(t_u8)steps[1], (t_u8)steps[2], (t_u8)steps[3]);
+			(t_u8)steps[1], (t_u8)steps[2], (t_u8)steps[3]);
 	return (result);
 }

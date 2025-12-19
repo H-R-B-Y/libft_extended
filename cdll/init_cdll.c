@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:02:16 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/05 12:22:21 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:04:39 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ t_cdll	cdll_init(void)
 {
 	return (
 		(t_cdll){
-			0
-		}
-	);
+		0
+	});
 }
 
 void	cdll_destroy(t_cdll *list, void (*del)(void *))
@@ -48,7 +47,7 @@ void	cdll_free(t_cdll *list, void (*del)(void *))
 	return ;
 }
 
-t_cdll				*cdll_create(void)
+t_cdll	*cdll_create(void)
 {
 	t_cdll	*list;
 

@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:24:21 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/30 12:34:40 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:09 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "free_list_internal.h"
 
-t_free_list_node *next_node(t_free_list *list, t_free_list_node *node)
+t_free_list_node	*next_node(t_free_list *list, t_free_list_node *node)
 {
 	if (!list || !node)
 		return (0);
@@ -21,7 +21,7 @@ t_free_list_node *next_node(t_free_list *list, t_free_list_node *node)
 	return ((t_free_list_node *)((void *)list->arena + node->next));
 }
 
-t_free_list_node *prev_node(t_free_list *list, t_free_list_node *node)
+t_free_list_node	*prev_node(t_free_list *list, t_free_list_node *node)
 {
 	t_u32				current_offset;
 	t_u32				node_offset;

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:47:23 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:47:33 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:14:54 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ t_colour	colour_contrast(t_colour c, MYFLOAT factor)
 	if (steps[3] > 255)
 		steps[3] = 255;
 	result = colour_create((t_u8)steps[0],
-		(t_u8)steps[1], (t_u8)steps[2], (t_u8)steps[3]);
+			(t_u8)steps[1], (t_u8)steps[2], (t_u8)steps[3]);
 	return (result);
 }

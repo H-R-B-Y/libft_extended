@@ -6,16 +6,15 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:13:01 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:38:46 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:53:44 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VEC3D_H
 # define VEC3D_H
 
-#include "defined.h"
+# include "defined.h"
 # include <math.h>
-
 
 // ██    ██ ███████  ██████ ██████  
 // ██    ██ ██      ██           ██ 
@@ -23,9 +22,9 @@
 //  ██  ██  ██      ██           ██ 
 //   ████   ███████  ██████ ██████  
 
-typedef union s_vec3	t_vec3;
+typedef union u_vec3	t_vec3;
 
-union __attribute__((aligned(8))) s_vec3
+union __attribute__((aligned(8))) u_vec3
 {
 	struct
 	{

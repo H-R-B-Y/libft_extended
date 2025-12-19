@@ -6,12 +6,12 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:27:06 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/05 12:02:06 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:06:58 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAP_H
-# define HEAP_H
+#ifndef FT_HEAP_H
+# define FT_HEAP_H
 
 # include "ft_mem.h"
 # include "defined.h"
@@ -24,7 +24,6 @@ struct s_heap
 	size_t	item_sz; // size of individual item
 	size_t	size; // count of items in heap
 	size_t	capacity; // max items in heap
-
 	ssize_t	(*compare)(void *a, void *b);
 };
 
@@ -36,14 +35,21 @@ struct s_heap
  * @return struct s_heap new stuct populated with data
  */
 struct s_heap	init_heap(size_t capacity, size_t item_sz,
-				ssize_t (*compare)(void *a, void *b));
+					ssize_t (*compare)(void *a, void *b));
 
 void			destroy_heap(struct s_heap *heap);
 
 // private
-void			_heap_swapvalues(struct s_heap *heap, size_t index_a, size_t index_b);
+void			_heap_swapvalues(
+					struct s_heap *heap,
+					size_t index_a,
+					size_t index_b);
+
 ssize_t			heap_parent_index(struct s_heap *heap, size_t child_index);
-t_returncode	heap_children(struct s_heap *heap, size_t parent_indx, size_t *child_index1, size_t	*child_index2);
+t_returncode	heap_children(struct s_heap *heap,
+					size_t parent_indx,
+					size_t *child_index1,
+					size_t *child_index2);
 
 void			*heap_at_index(struct s_heap *heap, size_t index);
 int				heap_isfull(struct s_heap *heap);

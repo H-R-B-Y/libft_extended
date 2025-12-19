@@ -6,14 +6,14 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 19:32:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/16 15:50:30 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:54:17 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VEC2D_H
 # define VEC2D_H
 
-#include "defined.h"
+# include "defined.h"
 # include <math.h>
 
 // ██    ██ ███████  ██████ ██████  
@@ -22,9 +22,9 @@
 //  ██  ██  ██      ██      ██      
 //   ████   ███████  ██████ ███████ 
 
-typedef union s_vec2	t_vec2;
+typedef union u_vec2	t_vec2;
 
-union __attribute__((aligned(8))) s_vec2
+union __attribute__((aligned(8))) u_vec2
 {
 	struct
 	{
@@ -161,7 +161,6 @@ t_vec2		vec2_lerp(t_vec2 vec1, t_vec2 vec2, MYFLOAT t);
  */
 MYFLOAT		vec2_distance(t_vec2 vec1, t_vec2 vec2);
 
-
 /**
  * @brief Clamp a 2D vector between two other vectors.
  * @param vec The vector to be clamped.
@@ -170,6 +169,6 @@ MYFLOAT		vec2_distance(t_vec2 vec1, t_vec2 vec2);
  * @return The clamped vector.
  * Note: This function clamps each component of the vector independently.
  */
-t_vec2	vec2_clamp(t_vec2 vec, t_vec2 min, t_vec2 max);
+t_vec2		vec2_clamp(t_vec2 vec, t_vec2 min, t_vec2 max);
 
-# endif
+#endif

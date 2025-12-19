@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:38:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:53:14 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ t_vec4	vec4_cross(t_vec4 a, t_vec4 b)
 	result.x = a.y * b.z - a.z * b.y;
 	result.y = a.z * b.x - a.x * b.z;
 	result.z = a.x * b.y - a.y * b.x;
-	result.w = 0.0f; // The w component is set to 0 for cross product
+	result.w = 0.0f;
 	return (result);
 }

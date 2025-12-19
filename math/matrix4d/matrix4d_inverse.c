@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:32:46 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 12:24:50 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:44:35 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ t_matrix4d	matrix4d_inverse(t_matrix4d matrix)
 	matrix4d_cofactor_row3(matrix, &inv.w, det);
 	return (inv);
 }
-

@@ -6,11 +6,11 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:16:07 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:49:21 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:20:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_mpmc_ringbuff.h"
+#include "ft_mpmc_ringbuff.h"
 
 t_mpmc_ringbuff	mpmc_rb_create(t_u32 capacity)
 {
@@ -23,9 +23,9 @@ t_mpmc_ringbuff	mpmc_rb_create(t_u32 capacity)
 	});
 }
 
-void			mpmc_rb_destroy(t_mpmc_ringbuff *ringbuff)
+void	mpmc_rb_destroy(t_mpmc_ringbuff *ringbuff)
 {
 	if (!ringbuff)
-		return;
+		return ;
 	free(ringbuff->content);
 }

@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:38:10 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/10/26 15:42:40 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:45 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ptr_is_part_of_freelist(t_free_list *list, void *ptr)
 	return (ptr >= (void *)list->arena
 		&& (char *)ptr - (char *)list->arena < (long int)list->total_size);
 }
-
 
 t_returncode	return_free_list(t_free_list *list, t_free_list_ptr ptr)
 {

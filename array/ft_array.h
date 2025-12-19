@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array.h                                           :+:      :+:    :+:   */
+/*   ft_array.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:12:34 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 11:52:06 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:59:40 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ft_list.h"
 # include "ft_string.h"
 # include <sys/types.h>
+# include "ft_list.h"
 
 /**
  * @brief Concatenate a array to another array
@@ -124,7 +125,6 @@ void			**ft_arrdel_atindex(void **arr,
 					size_t index, void (*del)(void *));
 
 # ifdef FT_ENABLE_LIST
-#  include "../linked_list/ft_list.h"
 
 /**
  * @brief convert an array to a list of items

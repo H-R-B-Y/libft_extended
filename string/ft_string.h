@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:26:40 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/01 12:06:50 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:01:24 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ size_t			ft_strlcpy(char *dest, const char *src, size_t size);
  * @warning Strings must be null terminated
  */
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
-
 
 /**
  * @brief Get first occurance of a character in a string
@@ -203,7 +202,6 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
  */
 ssize_t			ft_strcountchar(const char *str, char c);
 
-
 /**
  * @brief Right trim characters in the set from the string s1
  * 
@@ -234,6 +232,6 @@ char			*ft_strltrim(const char *s1, const char *set);
  * @param arr Array of strings to join
  * @return char* Single string contaning the strings from the array
  */
-char	*ft_strvecjoin(const char **arr);
+char			*ft_strvecjoin(const char **arr);
 
 #endif

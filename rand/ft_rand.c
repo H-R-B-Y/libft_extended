@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 14:55:45 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 15:05:25 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:02:59 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rand.h"
 
-static int *_get_seed_ptr(void)
+static int	*_get_seed_ptr(void)
 {
 	static int	seed = RANDSEED;
 
@@ -49,4 +49,3 @@ int	ft_rand(int min, int max)
 	this += min;
 	return (this);
 }
-

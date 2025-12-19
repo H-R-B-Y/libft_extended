@@ -14,7 +14,7 @@
 
 // TODO: Make some list functions so we dont have to do these loops here
 // Just like add back and maybe iter or something
-int			hm_add_pair(t_hashmap *hashmap,
+int	hm_add_pair(t_hashmap *hashmap,
 	t_hashpair *head,
 	void *key,
 	void *value
@@ -44,7 +44,7 @@ int			hm_add_pair(t_hashmap *hashmap,
 	return (RETURN_OK);
 }
 
-int			hm_add_value(t_hashmap *hashmap, void *key, void *value)
+int	hm_add_value(t_hashmap *hashmap, void *key, void *value)
 {
 	register unsigned int	hash;
 

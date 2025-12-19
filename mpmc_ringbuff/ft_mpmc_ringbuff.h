@@ -6,17 +6,15 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:47:42 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/07 14:50:25 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:20:41 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_MPMC_RINGBUFF_H
+# define FT_MPMC_RINGBUFF_H
 # ifndef __GNU_SOURCE
 #  define __GNU_SOURCE
 # endif
-
-#ifndef FT_MPMC_RINGBUFF_H
-# define FT_MPMC_RINGBUFF_H
-
 # include "ft_mem.h"
 # include "defined.h"
 
@@ -46,7 +44,7 @@ struct s_mpmc_ringbuff
  * 
  * @return t_mpmc_ringbuff 
  */
-t_mpmc_ringbuff	mpmc_rb_create(t_vu32);
+t_mpmc_ringbuff	mpmc_rb_create(t_vu32 size);
 
 /**
  * @brief Destory a ring buffer
@@ -61,6 +59,6 @@ void			mpmc_rb_destroy(t_mpmc_ringbuff *ringbuff);
 int				mpmc_rb_push(t_mpmc_ringbuff *ringbuff, void *content);
 int				mpmc_rb_pop(t_mpmc_ringbuff *ringbuff, void **content);
 
-t_u64				mpmc_rb_size(t_mpmc_ringbuff *s_mpmc_ringbuff);
+t_u64			mpmc_rb_size(t_mpmc_ringbuff *s_mpmc_ringbuff);
 
 #endif

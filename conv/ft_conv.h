@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:15:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/01 12:09:49 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:11:55 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ float			ft_atof(const char *str);
  * @return A malloc'd string containing the integer or 0 if malloc fails
  */
 char			*ft_itoa(int n);
-
 
 /**
  * @brief Atoi but will return 0 if the provided string is not entirely

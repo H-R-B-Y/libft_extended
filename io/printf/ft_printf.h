@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 16:11:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/26 12:11:47 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:57:16 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ t_conv	*set_prefix(t_conv *c);
 // Handles the escape sequence in the string.
 int		handle_escape(int fd, const char **str, va_list args,
 			unsigned long long *len);
-
 
 // general_functions.c
 

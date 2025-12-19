@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:50:28 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/09 13:30:50 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 20:05:37 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_heap.h"
 
-int		heap_isfull(struct s_heap *heap)
+int	heap_isfull(struct s_heap *heap)
 {
 	if (!heap)
 		return (-1);
@@ -21,7 +21,7 @@ int		heap_isfull(struct s_heap *heap)
 	return (0);
 }
 
-int		heap_validindex(struct s_heap *heap, size_t index)
+int	heap_validindex(struct s_heap *heap, size_t index)
 {
 	if (!heap)
 		return (-1);

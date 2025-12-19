@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:57:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 10:57:30 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/11/03 19:54:21 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,3 @@ t_vec2	vec2_sub(t_vec2 vec1, t_vec2 vec2)
 	return ((t_vec2){.x = vec1.x - vec2.x,
 		.y = vec1.y - vec2.y});
 }
-

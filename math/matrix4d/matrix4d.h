@@ -1,26 +1,52 @@
-#ifndef MATRIX4D_H
-#define MATRIX4D_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix4d.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 19:45:24 by hbreeze           #+#    #+#             */
+/*   Updated: 2025/12/19 11:57:36 by hbreeze          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "defined.h"
-#include "vec4d.h" // Include your 4D vector header here
-#include "vec3d.h"
+#ifndef MATRIX4D_H
+# define MATRIX4D_H
+
+# include "defined.h"
+# include "vec4d.h" // Include your 4D vector header here
+# include "vec3d.h"
 
 // Matrix 4D struct definition
-typedef union s_matrix4d {
-
-	struct {
-		t_vec4 x;  // First row
-		t_vec4 y;  // Second row
-		t_vec4 z;  // Third row
-		t_vec4 w;  // Fourth row
+typedef union u_matrix4d
+{
+	struct
+	{
+		t_vec4	x;
+		t_vec4	y;
+		t_vec4	z;
+		t_vec4	w;
 	};
-	struct {
-		MYFLOAT x1, y1, z1, w1;  // First row elements
-		MYFLOAT x2, y2, z2, w2;  // Second row elements
-		MYFLOAT x3, y3, z3, w3;  // Third row elements
-		MYFLOAT x4, y4, z4, w4;  // Fourth row elements
+	struct
+	{
+		MYFLOAT	x1;
+		MYFLOAT	y1;
+		MYFLOAT	z1;
+		MYFLOAT	w1;
+		MYFLOAT	x2;
+		MYFLOAT	y2;
+		MYFLOAT	z2;
+		MYFLOAT	w2;
+		MYFLOAT	x3;
+		MYFLOAT	y3;
+		MYFLOAT	z3;
+		MYFLOAT	w3;
+		MYFLOAT	x4;
+		MYFLOAT	y4;
+		MYFLOAT	z4;
+		MYFLOAT	w4;
 	};
-	MYFLOAT m[4][4];  // 4D array representation
+	MYFLOAT	m[4][4];
 } __attribute__((aligned(8)))	t_matrix4d;
 
 /**
@@ -57,12 +83,14 @@ t_matrix4d	matrix4d_transpose(t_matrix4d m);
  * @param m The matrix.
  * @return The determinant of the matrix.
  */
-MYFLOAT	matrix4d_determinant(t_matrix4d m);
+MYFLOAT		matrix4d_determinant(t_matrix4d m);
 
 /**
  * @brief Calculate the inverse of a 4D matrix.
+ * 
  * @param m The matrix.
- * @return The inverse of the matrix, or an identity matrix if it's not invertible.
+ * @return The inverse of the matrix, or an
+ * identity matrix if it's not invertible.
  */
 t_matrix4d	matrix4d_inverse(t_matrix4d m);
 
@@ -113,7 +141,7 @@ t_matrix4d	matrix4d_rotate_z(MYFLOAT angle);
  * @param v The 4D vector.
  * @return The transformed 4D vector.
  */
-t_vec4	matrix4d_transform(t_matrix4d m, t_vec4 v);
+t_vec4		matrix4d_transform(t_matrix4d m, t_vec4 v);
 
 /**
  * @brief Add two 4D matrices.
@@ -131,18 +159,15 @@ t_matrix4d	matrix4d_add(t_matrix4d m1, t_matrix4d m2);
  */
 t_matrix4d	matrix4d_sub(t_matrix4d m1, t_matrix4d m2);
 
-
 t_matrix4d	matrix4d_rotate(MYFLOAT x_angle, MYFLOAT y_angle, MYFLOAT z_angle);
 
 /**
  * @brief Helper functions for matrix4d_inverse
  */
-MYFLOAT	det3x3(MYFLOAT a11, MYFLOAT a12, MYFLOAT a13,
-			MYFLOAT a21, MYFLOAT a22, MYFLOAT a23,
-			MYFLOAT a31, MYFLOAT a32, MYFLOAT a33);
-void	matrix4d_cofactor_row0(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void	matrix4d_cofactor_row1(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void	matrix4d_cofactor_row2(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void	matrix4d_cofactor_row3(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
+MYFLOAT		det3x3(t_vec3 row1, t_vec3 row2, t_vec3 row3);
+void		matrix4d_cofactor_row0(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
+void		matrix4d_cofactor_row1(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
+void		matrix4d_cofactor_row2(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
+void		matrix4d_cofactor_row3(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
 
 #endif // MATRIX4D_H
