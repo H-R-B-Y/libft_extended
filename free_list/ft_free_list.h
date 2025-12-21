@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:10:04 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:12:57 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 19:28:43 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,22 +108,12 @@ t_returncode			resize_free_list(
 							t_free_list *list,
 							size_t new_size);
 
-HEADER_STATIC void	*free_list_get_ptr(
-						t_free_list *list,
-						t_free_list_ptr offset)
-{
-	if (!list || !list->arena || offset == FREE_LIST_NULL_OFFSET)
-		return (0);
-	return ((char *)list->arena + offset);
-}
+void					*free_list_get_ptr(
+							t_free_list *list,
+							t_free_list_ptr offset);
 
-HEADER_STATIC t_free_list_ptr	free_list_get_offset(
-									t_free_list *list,
-									void *ptr)
-{
-	if (!list || !list->arena || !ptr)
-		return (FREE_LIST_NULL_OFFSET);
-	return ((char *)ptr - (char *)list->arena);
-}
+t_free_list_ptr			free_list_get_offset(
+							t_free_list *list,
+							void *ptr);
 
 #endif

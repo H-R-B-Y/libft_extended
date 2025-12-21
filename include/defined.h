@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/21 18:53:28 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 19:29:36 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,6 @@
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
-# endif
-# ifndef __DOXYGEN__
-#  ifndef HEADER_STATIC_CONST
-#   warning compile with -DHEADER_STATIC_CONST="__attribute__((unused))"
-#  endif
-#  ifndef HEADER_STATIC
-#   warning compile with -DHEADER_STATIC="__attribute__((unused))"
-#  endif
-# else
-#  define HEADER_STATIC
-#  define HEADER_STATIC_CONST
 # endif
 
 /*
