@@ -6,17 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:55:22 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:44:42 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix4d.h"
 
-t_matrix4d	matrix4d_rotate_y(MYFLOAT angle)
+t_matrix4d	matrix4d_rotate_y(float angle)
 {
 	t_matrix4d	matrix;
-	MYFLOAT		cos_angle;
-	MYFLOAT		sin_angle;
+	float		cos_angle;
+	float		sin_angle;
 
 	cos_angle = cosf(angle);
 	sin_angle = sinf(angle);

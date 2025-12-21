@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:15:36 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/19 11:52:17 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:50:59 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ typedef union s_colour
 
 typedef struct s_colourf
 {
-	MYFLOAT	r;
-	MYFLOAT	g;
-	MYFLOAT	b;
-	MYFLOAT	a;
+	float	r;
+	float	g;
+	float	b;
+	float	a;
 }	t_colourf;
 
 #  else
@@ -56,28 +56,15 @@ typedef union s_colour
 
 typedef struct s_colourf
 {
-	MYFLOAT	a;
-	MYFLOAT	r;
-	MYFLOAT	g;
-	MYFLOAT	b;
+	float	a;
+	float	r;
+	float	g;
+	float	b;
 }	t_colourf;
 
 #  endif
 # else
 #  error "Endianness not defined"
-# endif
-
-# ifndef COLOUR_MAX
-#  warning "compile with -DCOLOUR_MAX='((t_colour){.u = 0xFFFFFFFF})'"
-# endif
-# ifndef COLOUR_MIN
-#  warning "compile with -DCOLOUR_MIN='((t_colour){.u = 0x00000000})'"
-# endif
-# ifndef COLOURF_MAX
-#  warning "compile with -DCOLOURF_MAX='((t_colourf){1.0f, 1.0f, 1.0f, 1.0f})'"
-# endif
-# ifndef COLOURF_MIN
-#  warning "compile with -DCOLOURF_MIN='((t_colourf){0.0f, 0.0f, 0.0f, 0.0f})'"
 # endif
 
 /**
@@ -116,7 +103,7 @@ t_colour	colour_multiply(t_colour c1, t_colour c2);
  * @param factor scale factor
  * @return t_colour 
  */
-t_colour	colour_scale(t_colour c, MYFLOAT factor);
+t_colour	colour_scale(t_colour c, float factor);
 
 /**
  * @brief Convert a colour to a floating point colour.
@@ -134,7 +121,7 @@ t_colourf	colour_to_colourf(t_colour c);
  * @param t interpolation factor
  * @return t_colour 
  */
-t_colour	colour_lerp(t_colour c1, t_colour c2, MYFLOAT t);
+t_colour	colour_lerp(t_colour c1, t_colour c2, float t);
 
 /**
  * @brief Convert a colour to greyscale.
@@ -159,7 +146,7 @@ t_colour	colour_invert(t_colour c);
  * @param gamma gamma value
  * @return t_colour 
  */
-t_colour	colour_gamma_correction(t_colour c, MYFLOAT gamma);
+t_colour	colour_gamma_correction(t_colour c, float gamma);
 
 /**
  * @brief 	Clamp a colour between a minimum and maximum value.
@@ -178,7 +165,7 @@ t_colour	colour_clamp(t_colour c, t_colour min, t_colour max);
  * @param factor brightness factor
  * @return t_colour 
  */
-t_colour	colour_brightness(t_colour c, MYFLOAT factor);
+t_colour	colour_brightness(t_colour c, float factor);
 
 /**
  * @brief Adjust the contrast of a colour.
@@ -187,7 +174,7 @@ t_colour	colour_brightness(t_colour c, MYFLOAT factor);
  * @param factor contrast factor
  * @return t_colour 
  */
-t_colour	colour_contrast(t_colour c, MYFLOAT factor);
+t_colour	colour_contrast(t_colour c, float factor);
 
 /**
  * @brief Blend two colours using alpha blending.
@@ -221,18 +208,18 @@ t_colour	colour_average(t_colour c1, t_colour c2);
  * 
  * @param c1 colour 1
  * @param c2 colour 2
- * @return MYFLOAT 
+ * @return float 
  */
-MYFLOAT		colour_distance(t_colour c1, t_colour c2);
+float		colour_distance(t_colour c1, t_colour c2);
 
 /**
  * @brief Calculate the squared Euclidean distance between two colours.
  * 
  * @param c1 colour 1
  * @param c2 colour 2
- * @return MYFLOAT 
+ * @return float 
  */
-MYFLOAT		colour_distance_sq(t_colour c1, t_colour c2);
+float		colour_distance_sq(t_colour c1, t_colour c2);
 
 /**
  * @brief Check if two colours are equal.
@@ -261,7 +248,7 @@ t_colourf	colourf_add(t_colourf c1, t_colourf c2);
  * @param a alpha component
  * @return t_colourf 
  */
-t_colourf	colourf_create(MYFLOAT r, MYFLOAT g, MYFLOAT b, MYFLOAT a);
+t_colourf	colourf_create(float r, float g, float b, float a);
 
 /**
  * @brief Multiply two floating point colours.
@@ -279,7 +266,7 @@ t_colourf	colourf_multiply(t_colourf c1, t_colourf c2);
  * @param factor scale factor
  * @return t_colourf 
  */
-t_colourf	colourf_scale(t_colourf c, MYFLOAT factor);
+t_colourf	colourf_scale(t_colourf c, float factor);
 
 /**
  * @brief Convert a floating point colour to an integer colour.
@@ -297,7 +284,7 @@ t_colour	colourf_to_colour(t_colourf c);
  * @param t interpolation factor
  * @return t_colourf 
  */
-t_colourf	colourf_lerp(t_colourf c1, t_colourf c2, MYFLOAT t);
+t_colourf	colourf_lerp(t_colourf c1, t_colourf c2, float t);
 
 /**
  * @brief Convert a floating point colour to greyscale using the luminosity
@@ -323,7 +310,7 @@ t_colourf	colourf_invert(t_colourf c);
  * @param gamma gamma value
  * @return t_colourf 
  */
-t_colourf	colourf_gamma_correction(t_colourf c, MYFLOAT gamma);
+t_colourf	colourf_gamma_correction(t_colourf c, float gamma);
 
 /**
  * @brief Apply inverse gamma correction to a floating point colour.
@@ -341,7 +328,7 @@ t_colourf	colourf_clamp(t_colourf c, t_colourf min, t_colourf max);
  * @param factor brightness factor
  * @return t_colourf 
  */
-t_colourf	colourf_brightness(t_colourf c, MYFLOAT factor);
+t_colourf	colourf_brightness(t_colourf c, float factor);
 
 /**
  * @brief Adjust the contrast of a floating point colour.
@@ -350,7 +337,7 @@ t_colourf	colourf_brightness(t_colourf c, MYFLOAT factor);
  * @param factor contrast factor
  * @return t_colourf 
  */
-t_colourf	colourf_contrast(t_colourf c, MYFLOAT factor);
+t_colourf	colourf_contrast(t_colourf c, float factor);
 
 /**
  * @brief Blend two floating point colours using alpha blending.
@@ -384,9 +371,9 @@ t_colourf	colourf_average(t_colourf c1, t_colourf c2);
  * 
  * @param c1 colour 1
  * @param c2 colour 2
- * @return MYFLOAT 
+ * @return float 
  */
-MYFLOAT		colourf_distance(t_colourf c1, t_colourf c2);
+float		colourf_distance(t_colourf c1, t_colourf c2);
 
 /**
  * @brief 	Calculate the squared Euclidean distance between two floating
@@ -394,9 +381,9 @@ MYFLOAT		colourf_distance(t_colourf c1, t_colourf c2);
  * 
  * @param c1 colour 1
  * @param c2 colour 2
- * @return MYFLOAT 
+ * @return float 
  */
-MYFLOAT		colourf_distance_sq(t_colourf c1, t_colourf c2);
+float		colourf_distance_sq(t_colourf c1, t_colourf c2);
 
 /**
  * @brief Check if two floating point colours are equal.

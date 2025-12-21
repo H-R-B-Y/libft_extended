@@ -6,17 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:56:16 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:44:53 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix4d.h"
 
 t_matrix4d	matrix4d_scaling(
-	MYFLOAT scale_x,
-	MYFLOAT scale_y,
-	MYFLOAT scale_z,
-	MYFLOAT scale_w
+	float scale_x,
+	float scale_y,
+	float scale_z,
+	float scale_w
 )
 {
 	t_matrix4d	matrix;

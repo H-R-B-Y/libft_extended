@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 19:32:05 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:54:17 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:52:02 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ union __attribute__((aligned(8))) u_vec2
 {
 	struct
 	{
-		MYFLOAT	x;
-		MYFLOAT	y;
+		float	x;
+		float	y;
 	};
-	MYFLOAT		v[2];
+	float		v[2];
 };
 
 /**
@@ -39,7 +39,7 @@ union __attribute__((aligned(8))) u_vec2
  * @param vec The vector.
  * @return The magnitude of the vector.
  */
-MYFLOAT		vec2_magnitude(t_vec2 vec);
+float		vec2_magnitude(t_vec2 vec);
 
 /**
  * @brief Calculate the dot product of two 2D vectors.
@@ -47,7 +47,7 @@ MYFLOAT		vec2_magnitude(t_vec2 vec);
  * @param vec2 The second vector.
  * @return The dot product of the two vectors.
  */
-MYFLOAT		vec2_dot_product(t_vec2 vec1, t_vec2 vec2);
+float		vec2_dot_product(t_vec2 vec1, t_vec2 vec2);
 
 /**
  * @brief Normalize a 2D vector.
@@ -70,7 +70,7 @@ t_vec2		vec2_add(t_vec2 vec1, t_vec2 vec2);
  * @param angle The rotation angle in degrees.
  * @return The rotated vector.
  */
-t_vec2		vec2_rotate(t_vec2 vec, MYFLOAT angle);
+t_vec2		vec2_rotate(t_vec2 vec, float angle);
 
 /**
  * @brief Multiply a 2D vector by a scalar.
@@ -78,7 +78,7 @@ t_vec2		vec2_rotate(t_vec2 vec, MYFLOAT angle);
  * @param scalar The scalar value.
  * @return The scaled vector.
  */
-t_vec2		vec2_mult_scalar(t_vec2 vec, MYFLOAT scalar);
+t_vec2		vec2_mult_scalar(t_vec2 vec, float scalar);
 
 /**
  * @brief Multiply two 2D vectors.
@@ -111,7 +111,7 @@ t_vec2		vec2_div(t_vec2 vec1, t_vec2 vec2);
  * @param scalar The scalar value.
  * @return The quotient of the vector and the scalar.
  */
-t_vec2		vec2_div_scalar(t_vec2 vec, MYFLOAT scalar);
+t_vec2		vec2_div_scalar(t_vec2 vec, float scalar);
 
 /**
  * @brief Returns the perpendicular vector of a 2D vector.
@@ -126,7 +126,7 @@ t_vec2		vec2_perpendicular(t_vec2 vec);
  * @param vec2 The second vector.
  * @return The angle in radians.
  */
-MYFLOAT		vec2_angle(t_vec2 vec1, t_vec2 vec2);
+float		vec2_angle(t_vec2 vec1, t_vec2 vec2);
 
 /**
  * @brief Reflect a 2D vector across a normal vector.
@@ -151,7 +151,7 @@ t_vec2		vec2_project(t_vec2 vec1, t_vec2 vec2);
  * @param t The interpolation factor (0.0 to 1.0).
  * @return The interpolated vector.
  */
-t_vec2		vec2_lerp(t_vec2 vec1, t_vec2 vec2, MYFLOAT t);
+t_vec2		vec2_lerp(t_vec2 vec1, t_vec2 vec2, float t);
 
 /**
  * @brief Calculate the distance between two 2D vectors.
@@ -159,7 +159,7 @@ t_vec2		vec2_lerp(t_vec2 vec1, t_vec2 vec2, MYFLOAT t);
  * @param vec2 The second vector.
  * @return The distance between the two vectors.
  */
-MYFLOAT		vec2_distance(t_vec2 vec1, t_vec2 vec2);
+float		vec2_distance(t_vec2 vec1, t_vec2 vec2);
 
 /**
  * @brief Clamp a 2D vector between two other vectors.

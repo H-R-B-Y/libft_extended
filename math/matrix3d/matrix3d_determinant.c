@@ -6,15 +6,15 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:35:27 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:26:45 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix3d.h"
 
-MYFLOAT	matrix3d_determinant(t_matrix3d mat)
+float	matrix3d_determinant(t_matrix3d mat)
 {
-	MYFLOAT	det;
+	float	det;
 
 	det = mat.x.x * (mat.y.y * mat.z.z - mat.y.z * mat.z.y)
 		- mat.x.y * (mat.y.x * mat.z.z - mat.y.z * mat.z.x)

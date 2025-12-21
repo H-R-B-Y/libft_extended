@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:45:24 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/19 11:57:36 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,24 @@ typedef union u_matrix4d
 	};
 	struct
 	{
-		MYFLOAT	x1;
-		MYFLOAT	y1;
-		MYFLOAT	z1;
-		MYFLOAT	w1;
-		MYFLOAT	x2;
-		MYFLOAT	y2;
-		MYFLOAT	z2;
-		MYFLOAT	w2;
-		MYFLOAT	x3;
-		MYFLOAT	y3;
-		MYFLOAT	z3;
-		MYFLOAT	w3;
-		MYFLOAT	x4;
-		MYFLOAT	y4;
-		MYFLOAT	z4;
-		MYFLOAT	w4;
+		float	x1;
+		float	y1;
+		float	z1;
+		float	w1;
+		float	x2;
+		float	y2;
+		float	z2;
+		float	w2;
+		float	x3;
+		float	y3;
+		float	z3;
+		float	w3;
+		float	x4;
+		float	y4;
+		float	z4;
+		float	w4;
 	};
-	MYFLOAT	m[4][4];
+	float	m[4][4];
 } __attribute__((aligned(8)))	t_matrix4d;
 
 /**
@@ -69,7 +69,7 @@ t_matrix4d	matrix4d_multiply(t_matrix4d m1, t_matrix4d m2);
  * @param scalar The scalar value.
  * @return The scaled matrix.
  */
-t_matrix4d	matrix4d_scalar_multiply(t_matrix4d m, MYFLOAT scalar);
+t_matrix4d	matrix4d_scalar_multiply(t_matrix4d m, float scalar);
 
 /**
  * @brief Transpose a 4D matrix.
@@ -83,7 +83,7 @@ t_matrix4d	matrix4d_transpose(t_matrix4d m);
  * @param m The matrix.
  * @return The determinant of the matrix.
  */
-MYFLOAT		matrix4d_determinant(t_matrix4d m);
+float		matrix4d_determinant(t_matrix4d m);
 
 /**
  * @brief Calculate the inverse of a 4D matrix.
@@ -102,7 +102,7 @@ t_matrix4d	matrix4d_inverse(t_matrix4d m);
  * @param w Translation along the w-axis.
  * @return A 4D translation matrix.
  */
-t_matrix4d	matrix4d_translation(MYFLOAT x, MYFLOAT y, MYFLOAT z, MYFLOAT w);
+t_matrix4d	matrix4d_translation(float x, float y, float z, float w);
 
 /**
  * @brief Create a scaling matrix for 4D space.
@@ -112,28 +112,28 @@ t_matrix4d	matrix4d_translation(MYFLOAT x, MYFLOAT y, MYFLOAT z, MYFLOAT w);
  * @param w Scaling factor along the w-axis.
  * @return A 4D scaling matrix.
  */
-t_matrix4d	matrix4d_scaling(MYFLOAT x, MYFLOAT y, MYFLOAT z, MYFLOAT w);
+t_matrix4d	matrix4d_scaling(float x, float y, float z, float w);
 
 /**
  * @brief Create a rotation matrix for rotating around the x-axis in 4D space.
  * @param angle The rotation angle in radians.
  * @return A 4D rotation matrix for rotating around the x-axis.
  */
-t_matrix4d	matrix4d_rotate_x(MYFLOAT angle);
+t_matrix4d	matrix4d_rotate_x(float angle);
 
 /**
  * @brief Create a rotation matrix for rotating around the y-axis in 4D space.
  * @param angle The rotation angle in radians.
  * @return A 4D rotation matrix for rotating around the y-axis.
  */
-t_matrix4d	matrix4d_rotate_y(MYFLOAT angle);
+t_matrix4d	matrix4d_rotate_y(float angle);
 
 /**
  * @brief Create a rotation matrix for rotating around the z-axis in 4D space.
  * @param angle The rotation angle in radians.
  * @return A 4D rotation matrix for rotating around the z-axis.
  */
-t_matrix4d	matrix4d_rotate_z(MYFLOAT angle);
+t_matrix4d	matrix4d_rotate_z(float angle);
 
 /**
  * @brief Apply a 4D matrix transformation to a 4D vector.
@@ -159,15 +159,15 @@ t_matrix4d	matrix4d_add(t_matrix4d m1, t_matrix4d m2);
  */
 t_matrix4d	matrix4d_sub(t_matrix4d m1, t_matrix4d m2);
 
-t_matrix4d	matrix4d_rotate(MYFLOAT x_angle, MYFLOAT y_angle, MYFLOAT z_angle);
+t_matrix4d	matrix4d_rotate(float x_angle, float y_angle, float z_angle);
 
 /**
  * @brief Helper functions for matrix4d_inverse
  */
-MYFLOAT		det3x3(t_vec3 row1, t_vec3 row2, t_vec3 row3);
-void		matrix4d_cofactor_row0(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void		matrix4d_cofactor_row1(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void		matrix4d_cofactor_row2(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
-void		matrix4d_cofactor_row3(t_matrix4d matrix, t_vec4 *row, MYFLOAT det);
+float		det3x3(t_vec3 row1, t_vec3 row2, t_vec3 row3);
+void		matrix4d_cofactor_row0(t_matrix4d matrix, t_vec4 *row, float det);
+void		matrix4d_cofactor_row1(t_matrix4d matrix, t_vec4 *row, float det);
+void		matrix4d_cofactor_row2(t_matrix4d matrix, t_vec4 *row, float det);
+void		matrix4d_cofactor_row3(t_matrix4d matrix, t_vec4 *row, float det);
 
 #endif // MATRIX4D_H

@@ -6,18 +6,18 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:17:37 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:53:47 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 
-MYFLOAT	vec3_angle(t_vec3 vec1, t_vec3 vec2)
+float	vec3_angle(t_vec3 vec1, t_vec3 vec2)
 {
-	MYFLOAT	dot_product;
-	MYFLOAT	magnitude1;
-	MYFLOAT	magnitude2;
-	MYFLOAT	angle;
+	float	dot_product;
+	float	magnitude1;
+	float	magnitude2;
+	float	angle;
 
 	dot_product = vec3_dot_product(vec1, vec2);
 	magnitude1 = vec3_magnitude(vec1);

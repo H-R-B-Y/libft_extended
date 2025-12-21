@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 16:42:41 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:48:52 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ assume radians
 t_matrix3d	matrix3d_rotation(t_vec3 rotation)
 {
 	t_matrix3d	res[4];
-	MYFLOAT		angles[6];
+	float		angles[6];
 
 	angles[0] = cosf(rotation.x);
 	angles[1] = sinf(rotation.x);

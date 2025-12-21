@@ -6,17 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:53:20 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec4d.h"
 
-MYFLOAT	vec4_angle(t_vec4 a, t_vec4 b)
+float	vec4_angle(t_vec4 a, t_vec4 b)
 {
-	MYFLOAT	dot_product;
-	MYFLOAT	magnitude_a;
-	MYFLOAT	magnitude_b;
+	float	dot_product;
+	float	magnitude_a;
+	float	magnitude_b;
 
 	dot_product = vec4_dot_product(a, b);
 	magnitude_a = vec4_magnitude(a);

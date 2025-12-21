@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:32:46 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:44:35 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_matrix4d	matrix4d_inverse(t_matrix4d matrix)
 {
 	t_matrix4d	inv;
-	MYFLOAT		det;
+	float		det;
 
 	det = matrix4d_determinant(matrix);
 	if (det == 0.0f)

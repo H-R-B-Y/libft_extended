@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:57:57 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:58:06 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_colour.h"
 
-static MYFLOAT	clamp_mf(MYFLOAT value, MYFLOAT min, MYFLOAT max)
+static float	clamp_mf(float value, float min, float max)
 {
 	if (value < min)
 		return (min);

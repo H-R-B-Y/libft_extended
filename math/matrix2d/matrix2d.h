@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:27:25 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:56:37 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ typedef union u_matrix2d
 	};
 	struct
 	{
-		MYFLOAT	x1;
-		MYFLOAT	y1;
-		MYFLOAT	x2;
-		MYFLOAT	y2;
+		float	x1;
+		float	y1;
+		float	x2;
+		float	y2;
 	};
-	MYFLOAT	m[2][2];
+	float	m[2][2];
 } __attribute__((aligned(8)))	t_matrix2d;
 
 // Function declarations
@@ -56,7 +56,7 @@ t_matrix2d	matrix2d_multiply(t_matrix2d m1, t_matrix2d m2);
  * @param scalar The scalar value.
  * @return The scaled matrix.
  */
-t_matrix2d	matrix2d_scalar_multiply(t_matrix2d mat, MYFLOAT scalar);
+t_matrix2d	matrix2d_scalar_multiply(t_matrix2d mat, float scalar);
 
 /**
  * @brief Add two 2D matrices.
@@ -86,7 +86,7 @@ t_matrix2d	matrix2d_transpose(t_matrix2d mat);
  * @param mat The matrix.
  * @return The determinant of the matrix.
  */
-MYFLOAT		matrix2d_determinant(t_matrix2d mat);
+float		matrix2d_determinant(t_matrix2d mat);
 
 /**
  * @brief Inverse of a 2D matrix.

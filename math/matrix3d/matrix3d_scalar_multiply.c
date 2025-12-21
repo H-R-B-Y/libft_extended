@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:35:27 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:26:45 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix3d.h"
 
-t_matrix3d	matrix3d_scalar_multiply(t_matrix3d mat, MYFLOAT scalar)
+t_matrix3d	matrix3d_scalar_multiply(t_matrix3d mat, float scalar)
 {
 	t_matrix3d	result;
 

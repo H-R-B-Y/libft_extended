@@ -6,18 +6,18 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:38:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec4d.h"
 
-t_vec4	vec4_rotate(t_vec4 vec, t_vec4 axis, MYFLOAT angle)
+t_vec4	vec4_rotate(t_vec4 vec, t_vec4 axis, float angle)
 {
 	t_vec4	result;
-	MYFLOAT	cos_angle;
-	MYFLOAT	sin_angle;
-	MYFLOAT	dot_product;
+	float	cos_angle;
+	float	sin_angle;
+	float	dot_product;
 
 	cos_angle = cosf(angle);
 	sin_angle = sinf(angle);

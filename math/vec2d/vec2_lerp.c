@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:57:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:54:25 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec2d.h"
 
-t_vec2	vec2_lerp(t_vec2 vec1, t_vec2 vec2, MYFLOAT t)
+t_vec2	vec2_lerp(t_vec2 vec1, t_vec2 vec2, float t)
 {
 	t_vec2	result;
 

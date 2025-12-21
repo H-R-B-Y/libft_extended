@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:29:01 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:54:35 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_matrix2d	matrix2d_inverse(t_matrix2d mat)
 {
 	t_matrix2d	result;
-	MYFLOAT		det;
+	float		det;
 
 	det = matrix2d_determinant(mat);
 	if (det == 0)

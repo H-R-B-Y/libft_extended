@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:53:02 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec4d.h"
 
-t_vec4	vec4_lerp(t_vec4 start, t_vec4 end, MYFLOAT t)
+t_vec4	vec4_lerp(t_vec4 start, t_vec4 end, float t)
 {
 	t_vec4	result;
 

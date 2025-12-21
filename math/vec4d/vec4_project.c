@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:18:55 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:38:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_vec4	vec4_project(t_vec4 vec1, t_vec4 vec2)
 {
-	MYFLOAT	dot_product;
-	MYFLOAT	magnitude_squared;
+	float	dot_product;
+	float	magnitude_squared;
 	t_vec4	result;
 
 	dot_product = vec4_dot_product(vec1, vec2);

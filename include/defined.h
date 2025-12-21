@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:16:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/19 12:07:53 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:53:28 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,8 @@ double types, and long double types for the entire project. This is useful for
 performance tuning and precision requirements.
 */
 
-# ifndef MYFLOAT
-#  warning compile with -DMYFLOAT=float
-
 typedef float				t_float;
 
-#  define MYFLOAT 
-# endif
 # ifndef EPSILON
 #  define EPSILON 0.00001f
 # endif
@@ -75,7 +70,7 @@ typedef void				(*t_freefn)(void *);
 
 # endif
 
-typedef MYFLOAT				t_float;
+typedef float				t_float;
 
 typedef uint8_t				t_u8;
 typedef uint16_t			t_u16;

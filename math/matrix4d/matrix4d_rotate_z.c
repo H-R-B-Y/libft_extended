@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   matrix4d_rotate_z.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:55:29 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/04/04 13:04:41 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix4d.h"
 
-t_matrix4d	matrix4d_rotate_z(MYFLOAT angle)
+t_matrix4d	matrix4d_rotate_z(float angle)
 {
 	t_matrix4d	matrix;
-	MYFLOAT		cos_angle;
-	MYFLOAT		sin_angle;
+	float		cos_angle;
+	float		sin_angle;
 
 	cos_angle = cosf(angle);
 	sin_angle = sinf(angle);

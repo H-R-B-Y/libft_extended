@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 19:48:58 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:50:05 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ typedef union s_matrix3d
 	};
 	struct
 	{
-		MYFLOAT	x1;
-		MYFLOAT	y1;
-		MYFLOAT	z1;
-		MYFLOAT	x2;
-		MYFLOAT	y2;
-		MYFLOAT	z2;
-		MYFLOAT	x3;
-		MYFLOAT	y3;
-		MYFLOAT	z3;
+		float	x1;
+		float	y1;
+		float	z1;
+		float	x2;
+		float	y2;
+		float	z2;
+		float	x3;
+		float	y3;
+		float	z3;
 	};
-	MYFLOAT	m[3][3];
+	float	m[3][3];
 } __attribute__((aligned(8)))	t_matrix3d;
 
 // Function declarations
@@ -61,7 +61,7 @@ t_matrix3d		matrix3d_multiply(t_matrix3d m1, t_matrix3d m2);
  * @param scalar The scalar value.
  * @return The scaled matrix.
  */
-t_matrix3d		matrix3d_scalar_multiply(t_matrix3d mat, MYFLOAT scalar);
+t_matrix3d		matrix3d_scalar_multiply(t_matrix3d mat, float scalar);
 
 /**
  * @brief Add two 3D matrices.
@@ -91,7 +91,7 @@ t_matrix3d		matrix3d_transpose(t_matrix3d mat);
  * @param mat The matrix.
  * @return The determinant of the matrix.
  */
-MYFLOAT			matrix3d_determinant(t_matrix3d mat);
+float			matrix3d_determinant(t_matrix3d mat);
 
 /**
  * @brief Inverse of a 3D matrix.

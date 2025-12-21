@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:55:29 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 11:42:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix4d.h"
 
-t_matrix4d	matrix4d_rotate(MYFLOAT x_angle, MYFLOAT y_angle, MYFLOAT z_angle)
+t_matrix4d	matrix4d_rotate(float x_angle, float y_angle, float z_angle)
 {
 	t_matrix4d	angles[4];
 

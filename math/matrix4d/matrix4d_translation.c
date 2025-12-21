@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:56:56 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:45:20 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix4d.h"
 
-t_matrix4d	matrix4d_translation(MYFLOAT x, MYFLOAT y, MYFLOAT z, MYFLOAT w)
+t_matrix4d	matrix4d_translation(float x, float y, float z, float w)
 {
 	t_matrix4d	matrix;
 

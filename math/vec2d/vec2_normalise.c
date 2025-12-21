@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:57:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/08/27 10:57:30 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vec2	vec2_normalise(t_vec2 vec)
 {
-	MYFLOAT	mag;
+	float	mag;
 
 	mag = vec2_magnitude(vec);
 	if (mag == 0)

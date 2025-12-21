@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:57:50 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:57:55 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:54:27 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_colour.h"
 
-t_colourf	colourf_brightness(t_colourf c, MYFLOAT factor)
+t_colourf	colourf_brightness(t_colourf c, float factor)
 {
 	t_colourf	result;
 
@@ -20,6 +20,6 @@ t_colourf	colourf_brightness(t_colourf c, MYFLOAT factor)
 	result.g = c.g * factor;
 	result.b = c.b * factor;
 	result.a = c.a * factor;
-	result = colourf_clamp(result, COLOURF_MIN, COLOURF_MAX);
+	result = colourf_clamp(result, ((t_colourf){0.0f, 0.0f, 0.0f, 0.0f}), (t_colourf){1.0f, 1.0f, 1.0f, 1.0f});
 	return (result);
 }

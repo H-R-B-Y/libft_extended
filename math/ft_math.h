@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:11:38 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:51:03 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@
  * @param start 
  * @param end 
  * @param t 
- * @return MYFLOAT 
+ * @return float 
  */
-MYFLOAT		lerp(MYFLOAT start, MYFLOAT end, MYFLOAT t);
+float		lerp(float start, float end, float t);
 
 /**
  * @brief Return a float value of t normalized between from and too.
@@ -49,9 +49,9 @@ MYFLOAT		lerp(MYFLOAT start, MYFLOAT end, MYFLOAT t);
  * @param from Smallest value of the range.
  * @param too Largest value of the range.
  * @param t Value to normalize.
- * @return MYFLOAT
+ * @return float
  */
-MYFLOAT		normalize(MYFLOAT from, MYFLOAT too, MYFLOAT t);
+float		normalize(float from, float too, float t);
 
 /**
  * @brief Map a value t from one range to another.
@@ -59,24 +59,24 @@ MYFLOAT		normalize(MYFLOAT from, MYFLOAT too, MYFLOAT t);
  * @param from The starting range (min, max).
  * @param too The target range (min, max).
  * @param t The value to map.
- * @return MYFLOAT
+ * @return float
  */
-MYFLOAT		maprange(t_vec2 from, t_vec2 too, MYFLOAT t);
+float		maprange(t_vec2 from, t_vec2 too, float t);
 
 /**
  * @brief Convert degrees to radians.
  * 
  * @param degrees degrees
- * @return MYFLOAT radians
+ * @return float radians
  */
-MYFLOAT		deg_to_rad(MYFLOAT degrees);
+float		deg_to_rad(float degrees);
 
 /**
  * @brief Convert radians to degrees.
  * 
  * @param radians radians
- * @return MYFLOAT degrees
+ * @return float degrees
  */
-MYFLOAT		rad_to_deg(MYFLOAT radians);
+float		rad_to_deg(float radians);
 
 #endif

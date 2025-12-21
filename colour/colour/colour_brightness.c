@@ -6,21 +6,21 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:46:00 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:14:51 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_colour.h"
 
-t_colour	colour_brightness(t_colour c, MYFLOAT factor)
+t_colour	colour_brightness(t_colour c, float factor)
 {
 	t_colour	result;
 	t_u16		steps[4];
 
-	steps[0] = (t_u16)((MYFLOAT)c.c.r * factor);
-	steps[1] = (t_u16)((MYFLOAT)c.c.g * factor);
-	steps[2] = (t_u16)((MYFLOAT)c.c.b * factor);
-	steps[3] = (t_u16)((MYFLOAT)c.c.a * factor);
+	steps[0] = (t_u16)((float)c.c.r * factor);
+	steps[1] = (t_u16)((float)c.c.g * factor);
+	steps[2] = (t_u16)((float)c.c.b * factor);
+	steps[3] = (t_u16)((float)c.c.a * factor);
 	if (steps[0] > 255)
 		steps[0] = 255;
 	if (steps[1] > 255)

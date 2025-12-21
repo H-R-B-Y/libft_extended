@@ -6,13 +6,13 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:58:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/09/17 12:58:35 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_colour.h"
 
-t_colourf	colourf_create(MYFLOAT r, MYFLOAT g, MYFLOAT b, MYFLOAT a)
+t_colourf	colourf_create(float r, float g, float b, float a)
 {
 	t_colourf	result;
 

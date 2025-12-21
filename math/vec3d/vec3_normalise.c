@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:17:37 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/22 19:12:24 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vec3	vec3_normalise(t_vec3 vec)
 {
-	MYFLOAT	magnitude;
+	float	magnitude;
 
 	magnitude = vec3_magnitude(vec);
 	if (magnitude == 0)

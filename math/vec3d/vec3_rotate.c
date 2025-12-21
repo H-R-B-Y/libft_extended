@@ -6,17 +6,17 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:17:37 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/19 11:58:51 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec3d.h"
 
-t_vec3	vec3_rotate(t_vec3 vec, t_vec3 axis, MYFLOAT angle)
+t_vec3	vec3_rotate(t_vec3 vec, t_vec3 axis, float angle)
 {
 	t_vec3	rotated;
-	MYFLOAT	cos_angle;
-	MYFLOAT	sin_angle;
+	float	cos_angle;
+	float	sin_angle;
 
 	cos_angle = cosf(angle);
 	sin_angle = sinf(angle);

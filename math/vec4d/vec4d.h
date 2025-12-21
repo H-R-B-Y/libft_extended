@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 20:13:01 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/11/03 19:52:56 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/21 18:44:49 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ union __attribute__((aligned(8))) u_vec4
 {
 	struct
 	{
-		MYFLOAT	x;
-		MYFLOAT	y;
-		MYFLOAT	z;
-		MYFLOAT	w;
+		float	x;
+		float	y;
+		float	z;
+		float	w;
 	};
-	MYFLOAT		v[4];
+	float		v[4];
 };
 
 /**
@@ -35,7 +35,7 @@ union __attribute__((aligned(8))) u_vec4
  * @param vec The 4D vector.
  * @return The magnitude of the vector.
  */
-MYFLOAT	vec4_magnitude(t_vec4 vec);
+float	vec4_magnitude(t_vec4 vec);
 
 /**
  * @brief Calculate the dot product of two 4D vectors.
@@ -43,7 +43,7 @@ MYFLOAT	vec4_magnitude(t_vec4 vec);
  * @param vec2 The second 4D vector.
  * @return The dot product of the two vectors.
  */
-MYFLOAT	vec4_dot_product(t_vec4 vec1, t_vec4 vec2);
+float	vec4_dot_product(t_vec4 vec1, t_vec4 vec2);
 
 /**
  * @brief Normalize a 4D vector (scale it to unit length).
@@ -74,7 +74,7 @@ t_vec4	vec4_sub(t_vec4 vec1, t_vec4 vec2);
  * @param scalar The scalar value.
  * @return The scaled vector.
  */
-t_vec4	vec4_scalar_mult(t_vec4 vec, MYFLOAT scalar);
+t_vec4	vec4_scalar_mult(t_vec4 vec, float scalar);
 
 /**
  * @brief Multiply two 4D vectors (component-wise multiplication).
@@ -100,7 +100,7 @@ t_vec4	vec4_cross(t_vec4 vec1, t_vec4 vec2);
  * @param t The interpolation factor (typically between 0 and 1).
  * @return The interpolated vector.
  */
-t_vec4	vec4_lerp(t_vec4 vec1, t_vec4 vec2, MYFLOAT t);
+t_vec4	vec4_lerp(t_vec4 vec1, t_vec4 vec2, float t);
 
 /**
  * @brief Calculate the angle between two 4D vectors.
@@ -108,7 +108,7 @@ t_vec4	vec4_lerp(t_vec4 vec1, t_vec4 vec2, MYFLOAT t);
  * @param vec2 The second 4D vector.
  * @return The angle between the vectors in radians.
  */
-MYFLOAT	vec4_angle(t_vec4 vec1, t_vec4 vec2);
+float	vec4_angle(t_vec4 vec1, t_vec4 vec2);
 
 /**
  * @brief Clamp a 4D vector's components to a given minimum and maximum.
@@ -125,7 +125,7 @@ t_vec4	vec4_clamp(t_vec4 vec, t_vec4 min, t_vec4 max);
  * @param vec2 The second 4D vector.
  * @return The distance between the two vectors.
  */
-MYFLOAT	vec4_distance(t_vec4 vec1, t_vec4 vec2);
+float	vec4_distance(t_vec4 vec1, t_vec4 vec2);
 
 /**
  * @brief Project one 4D vector onto another 4D vector.
@@ -150,7 +150,7 @@ t_vec4	vec4_reflect(t_vec4 vec, t_vec4 normal);
  * @param angle The angle of rotation in radians.
  * @return The rotated vector.
  */
-t_vec4	vec4_rotate(t_vec4 vec, t_vec4 axis, MYFLOAT angle);
+t_vec4	vec4_rotate(t_vec4 vec, t_vec4 axis, float angle);
 
 /**
  * vec4_minor
@@ -160,6 +160,6 @@ t_vec4	vec4_rotate(t_vec4 vec, t_vec4 axis, MYFLOAT angle);
  * @param v3 The third vector (row).
  * @return The minor of the matrix formed by the three vectors.
  */
-MYFLOAT	vec4_minor(t_vec4 v1, t_vec4 v2, t_vec4 v3);
+float	vec4_minor(t_vec4 v1, t_vec4 v2, t_vec4 v3);
 
 #endif
