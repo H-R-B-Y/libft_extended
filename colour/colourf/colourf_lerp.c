@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 13:00:59 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/21 18:54:27 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/22 18:58:50 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_colourf	colourf_lerp(t_colourf c1, t_colourf c2, float t)
 	result.g = c1.g + (c2.g - c1.g) * t;
 	result.b = c1.b + (c2.b - c1.b) * t;
 	result.a = c1.a + (c2.a - c1.a) * t;
-	result = colourf_clamp(result, ((t_colourf){0.0f, 0.0f, 0.0f, 0.0f}), (t_colourf){1.0f, 1.0f, 1.0f, 1.0f});
+	result = colourf_clamp(result,
+			((t_colourf){0.0f, 0.0f, 0.0f, 0.0f}),
+			(t_colourf){1.0f, 1.0f, 1.0f, 1.0f});
 	return (result);
 }

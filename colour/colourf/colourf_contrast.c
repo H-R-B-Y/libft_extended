@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 12:58:12 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/12/21 18:54:27 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/12/22 18:58:03 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_colourf	colourf_contrast(t_colourf c, float factor)
 	result.g = f * (c.g - 0.5f) + 0.5f;
 	result.b = f * (c.b - 0.5f) + 0.5f;
 	result.a = f * (c.a - 0.5f) + 0.5f;
-	result = colourf_clamp(result, ((t_colourf){0.0f, 0.0f, 0.0f, 0.0f}), (t_colourf){1.0f, 1.0f, 1.0f, 1.0f});
+	result = colourf_clamp(result,
+			((t_colourf){0.0f, 0.0f, 0.0f, 0.0f}),
+			(t_colourf){1.0f, 1.0f, 1.0f, 1.0f});
 	return (result);
 }
